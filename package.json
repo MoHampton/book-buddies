@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/mderoberts/book-buddies#readme",
   "dependencies": {
+    "firebase-admin": "^5.2.1",
     "sequelize": "^4.8.2"
   }
 }
