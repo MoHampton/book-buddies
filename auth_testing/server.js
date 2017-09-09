@@ -1,3 +1,14 @@
+var express = require('express');
+
+var path = require('path');
+
+var app = express();
+var PORT = process.env.PORT || 3000;
+
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, 'test.html'));
+})
+
 // set up Firebase tools
 var admin = require("firebase-admin");
 
@@ -8,4 +19,6 @@ admin.initializeApp({
   databaseURL: "https://book-buddies-b7e5a.firebaseio.com"
 });
 
-console.log("ok")
+app.listen(PORT, function() {
+  console.log("Listening on port", PORT);
+});

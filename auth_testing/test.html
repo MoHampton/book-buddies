@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <h1>Welcome to My Awesome App</h1>
+  <div id="firebaseui-auth-container"></div>
+</body>
+
+<!-- import firebase -->
+
+<script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBq75ygfcq_VsDP2UkBwRjgGabwWS-gZJg",
+    authDomain: "book-buddies-b7e5a.firebaseapp.com",
+    databaseURL: "https://book-buddies-b7e5a.firebaseio.com",
+    projectId: "book-buddies-b7e5a",
+    storageBucket: "book-buddies-b7e5a.appspot.com",
+    messagingSenderId: "582731739757"
+  };
+  firebase.initializeApp(config);
+
+</script>
+
+<script src="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.css" />
+
+<script>
+  // FirebaseUI config.
+  var uiConfig = {
+    signInSuccessUrl: 'success.html',
+    signInOptions: [
+      // Leave the lines as is for the providers you want to offer your users.
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+      firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+      firebase.auth.EmailAuthProvider.PROVIDER_ID
+    ]
+    // Terms of service url.
+    // tosUrl: '<your-tos-url>'
+  };
+
+  // Initialize the FirebaseUI Widget using Firebase.
+  var ui = new firebaseui.auth.AuthUI(firebase.auth());
+  // The start method will wait until the DOM is loaded.
+  ui.start('#firebaseui-auth-container', uiConfig);
+
+</script>
+
+</html>
