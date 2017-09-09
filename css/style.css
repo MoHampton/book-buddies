@@ -400,7 +400,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .login-box-social-section {
-  background: url("/img/bwbook.png");
+  background: url("../img/bookstack.png");
   background-size: cover;
   background-position: center;
 }
