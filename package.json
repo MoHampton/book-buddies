@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/mderoberts/book-buddies/issues"
   },
-  "homepage": "https://github.com/mderoberts/book-buddies#readme"
+  "homepage": "https://github.com/mderoberts/book-buddies#readme",
+  "dependencies": {
+    "sequelize": "^4.8.2"
+  }
 }
