@@ -1,0 +1,20 @@
+{
+  "name": "book-buddies",
+  "version": "1.0.0",
+  "description": "An app to find and manage book clubs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mderoberts/book-buddies.git"
+  },
+  "author": "monarchy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mderoberts/book-buddies/issues"
+  },
+  "homepage": "https://github.com/mderoberts/book-buddies#readme"
+}
