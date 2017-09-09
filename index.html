@@ -12,17 +12,17 @@
 <body>
 
 <!-- Navigation -->
-    <div class="title-bar" data-responsive-toggle="realEstateMenu" data-hide-for="small">
+    <div class="title-bar" data-responsive-toggle="bookBuddiesMenu" data-hide-for="small">
       <button class="orange menu-icon" type="button" data-toggle></button>
       <div class="orange title-bar-title">Menu</div>
     </div>
 
-    <div class="top-bar" id="realEstateMenu">
+    <div class="top-bar" id="bookBuddiesMenu">
       <div class="top-bar-left">
         <ul class="menu" data-responsive-menu="accordion">
-          <li class="menu-text">Book Buddies</li>
+          <li class="orange menu-text">Book Buddies</li>
           <li><a class="orange" href="#">Home</a></li>
-          <li><a href="#">About</a></li>
+          <li><a class="orange" href="#">About</a></li>
           <li><a class="orange" href="#">Book Clubs</a></li>
         </ul>
       </div>
@@ -49,22 +49,11 @@
                            <!-- <button class="secondary hollow button">Sign Up</button> -->
 
 <!-- Triggers the modal -->
-<a href="#" data-reveal-id="firstModal" class="secondary hollow button">Sign Up</a>
-
-<!--Modal Box -->
-<!--
-<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <h2 id="modalTitle">Awesome. I have it.</h2>
-  <p class="lead">Your couch.  It is mine.</p>
-  <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
-  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-</div>
-<!--Modal Box -->
-
+<p><button class="secondary hollow button" data-open="exampleModal1">Sign Up</a>
 
 <!--Login Modal Box -->
-<!--
-<div class="login-box">
+<div class="reveal" id="exampleModal1" data-reveal>
+ <div class="login-box">
   <div class="row collapse expanded">
     <div class="small-12 medium-6 column small-order-2 medium-order-1">
       <div class="login-box-form-section">
@@ -85,6 +74,11 @@
         <a class="login-box-social-button-google">Log in with Google+</a>
       </div>
     </div>
+  </div>
+</div>
+  <button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
   </div>
 </div>
 <!--Login Modal Box -->
