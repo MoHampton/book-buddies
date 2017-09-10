@@ -33,6 +33,16 @@ h1, h2, h3, h4, h5, h6 {
 
 /*General*/
 
+.top-bar {
+    color: white;
+    text-align: center;
+}
+
+.top-bar-right a {
+    color: white;
+}
+
+
 .intro {
     background: url(../img/bookshelf.jpg) no-repeat center center;
     -webkit-background-size: cover;
@@ -99,25 +109,30 @@ h1, h2, h3, h4, h5, h6 {
 
 /*Team*/
 
-.team {
+.buddies {
     background-color: #fff;
     margin: 40px;
 }
 
-.team-member {
+.buddy-member {
     text-align: center;
     margin-bottom :16px;
 }
 
-    .team-member img {
+.buddy-img {
+      height: 200px;
+      width: 200px;
+}
+
+    .buddy-member img {
         margin-bottom: 30px;
     }
 
-    .team-member h5 {
+    .buddy-member h5 {
         color: #F78536;
     }
 
-    .team-member p {
+    .buddy-member p {
         font-weight: 300;
     }
 /*Team*/
@@ -178,7 +193,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /*Map*/
 
-.map {
+.join {
     background-color: #F78536;
     color: #fff;
     min-height: 50px;
@@ -202,8 +217,22 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Contact */
 
-/*Footer */
+/*---------Book Club Page ----------*/
+/*Book Profile*/
+#bookProfile {
+    background-color: #2B4450;
+    color: #fff;
+}
+/*Book Profile*/
 
+/* Book Club Top Bar */
+#bcTop {
+    background-color: #F78536;
+     color: #fff;
+}
+/* Book Club Top Bar */
+
+/*Footer */
 .footer {
     background-color: #fff;
     text-align: center;
@@ -436,7 +465,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
   text-align: center;
   cursor: pointer;
-  background-color: #1779ba;
+  background-color: #F78536;
   color: #fefefe;
   display: block;
   width: 100%;
