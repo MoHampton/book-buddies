@@ -9,6 +9,7 @@ function googleSignIn() {
     // The signed-in user info.
     var user = result.user;
     console.log("user:", user);
+    $("#LoginModal").foundation('close');
   }).catch(function (error) {
     // Handle Errors here.
     var errorCode = error.code;
@@ -29,6 +30,7 @@ function facebookSignIn() {
     // The signed-in user info.
     var user = result.user;
     console.log("user:", user);
+    $("#LoginModal").foundation('close');
   }).catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
@@ -51,6 +53,7 @@ function twitterSignIn() {
     // The signed-in user info.
     var user = result.user;
     console.log("user:", user);
+    $("#LoginModal").foundation('close');
   }).catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
