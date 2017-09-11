@@ -44,10 +44,15 @@ module.exports = function(sequelize, DataTypes) {
         },
         nextBook: {
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1]
-            }
+            defaultValue: "Check back soon!"
+            // allowNull: false,
+            // validate: {
+            //     len: [1]
+            // }
         }
-    })
+    });
+
+    return Club;
 };
+
+// Club has many users

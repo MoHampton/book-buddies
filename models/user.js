@@ -41,5 +41,8 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: true,
         }
 
-    })
+    });
+    return User;
 };
+
+// User has many clubs
