@@ -5,11 +5,11 @@ var path = require('path');
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
+// app.get('/', function(req, res) {
+//   res.sendFile(path.join(__dirname, 'index.html'));
+// });
 
-app.use(express.static('./'));
+app.use(express.static('./public/'));
 
 // set up Firebase tools
 // var admin = require("firebase-admin");
