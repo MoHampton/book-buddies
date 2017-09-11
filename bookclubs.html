@@ -4,7 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Buddies Clubs | Welcome</title>
+     <link rel="shortcut icon" type="image/png" href="img/crown.png">
     <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link rel="stylesheet" type="text/css" href="foundation-icons/foundation-icons.css">
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
@@ -16,11 +18,39 @@
         <div class="off-canvas position-left reveal-for-large" id="bookProfile" data-off-canvas data-position="left">
           <div class="row column">
             <br>
-            <img class="thumbnail" src="http://placehold.it/550x350">
-            <h5>"Profile Name"</h5>
-            <p>Book Genre Selection: </p>
-            <p>Book Club Selection: </p>
-            <p>Location: </p>
+<div class="card-profile-stats">
+  <div class="card-profile-stats-intro">
+    <img class="card-profile-stats-intro-pic" src="https://pbs.twimg.com/profile_images/732634911761260544/OxHbNdTF.jpg" alt="profile-image" />
+    <div class="card-profile-stats-intro-content">
+      <h3>Joe Smith</h3>
+      <p> Kansas City, MO </p>
+    </div> <!-- /.card-profile-stats-intro-content -->
+  </div> <!-- /.card-profile-stats-intro -->
+
+  <hr>
+
+  <div class="card-profile-stats-container">
+    <div class="card-profile-stats-statistic">
+      <span class="stat">5</span>
+      <p class="orange">Clubs</p>
+    </div> <!-- /.card-profile-stats-statistic -->
+    <div class="card-profile-stats-statistic">
+      <span class="stat">125</span>
+      <p class="orange">Buddies</p>
+    </div> <!-- /.card-profile-stats-statistic -->
+  </div> <!-- /.card-profile-stats-container -->
+
+  <div class="card-profile-stats-more">
+    <p class="card-profile-stats-more-link"><a href="#"><i class="fa fa-angle-down" aria-hidden="true"></i></a></p>
+    <div class="card-profile-stats-more-content">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem libero fugit, pariatur maxime! Optio enim, deserunt quia molestiae fugiat delectus, dolore et esse nostrum, quod autem necessitatibus fugit soluta repellendus.
+      </p>
+    </div> <!-- /.card-profile-stats-more-content -->
+  </div> <!-- /.card-profile-stats-more -->
+</div> <!-- /.card-profile-stats -->
+
+
           </div>
         </div>
 
@@ -134,16 +164,26 @@
     </div>
   </div>
 </div>
+</div>
+  <hr>
 
-      </div>
+  <div class="grid-x" id="loadMore">
+  <div class="cell">
+   <div style="min-height:100%; padding-left:15px; padding-right: 15px; width:100%;">
+  <a class="orange button hollow expanded">Load More</a>
+  </div>
+  </div>
+  </div>
 
-          <hr>
 
+  <hr>
+
+<!--New Club Form -->
           <div class="grid-x" id="newClub">
             <div class="cell">
               <div style="background-color:rgba(0,0,0,0.7); min-height:100%; padding:32px; width:100%;">
               <h3>Can't Find Your Perfect Club?</h3>
-              <p>Become the ultimate Book Buddy and make a new Book Club!</p>
+              <h4>Become the ultimate <span class="orange"> Book Buddy </span> and create a new Book Club!</h4>
               <label>Club Name
                 <input type="text" placeholder="Name">
               </label>
@@ -165,9 +205,7 @@
       </div>
     </div>
 
-    <div class="footer">
-        <div class="row">
-            <div class="medium-12 columns">
+    <div class="cell shrink footer">
                 <div class="footer-social">
                     <i class="fi fi-social-facebook"></i>
                     <i class="fi fi-social-twitter"></i>
@@ -175,12 +213,14 @@
                     <i class="fi fi-social-linkedin"></i>
                 </div>
                 &copy; MONARCHY Coding 2017.
+                <br>
+                <img class="logo" src="img/Monarchy.png">
                 <p>Github: <span class="orange"> www.github.com </span> </p>
-            </div>
-        </div>
     </div>
     
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/foundation.js"></script>
     <script>
       $(document).foundation();
     </script>
