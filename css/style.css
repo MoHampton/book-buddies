@@ -611,6 +611,18 @@ h1, h2, h3, h4, h5, h6 {
   color: #fefefe;
   text-align: center;
 }
+
+.login-icon-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.login-icon {
+    display: inline-block;
+    height: 18px;
+    vertical-align: middle;
+    width: 18px;
+}
 /* ------ Log-In Style ----- */
 
 /* ------ Flip Card Style ----- */
