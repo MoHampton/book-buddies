@@ -74,7 +74,26 @@
 //   facebookSignIn();
 // });
 
-// $(".login-box-social-button-twitter").click(function (e) {
-//   e.preventDefault();
-//   twitterSignIn();
-// });
+$(".login-box-social-button-facebook").click(function (e) {
+  e.preventDefault();
+  facebookSignIn();
+});
+
+$(".login-box-social-button-twitter").click(function (e) {
+  e.preventDefault();
+  twitterSignIn();
+});
+
+/* ----- CARD PROFILE STATS ------- */
+
+// more click
+$('.card-profile-stats-more-link').click(function(e){
+  e.preventDefault();
+  if ( $(".card-profile-stats-more-content").is(':hidden') ) {
+    $('.card-profile-stats-more-link').find('i').removeClass('fa-angle-down').addClass('fa-angle-up');
+  } else {
+    $('.card-profile-stats-more-link').find('i').removeClass('fa-angle-up').addClass('fa-angle-down');
+  }
+  $(this).next('.card-profile-stats-more-content').slideToggle();
+});
+/* ----- CARD PROFILE STATS ------- */
