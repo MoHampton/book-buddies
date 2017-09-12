@@ -1,10 +1,13 @@
 var express = require('express');
-var bodyParser = require("body-parser");
+var bodyParser = require("body-parser"); //does this need to be after app=express()?
 
 var path = require('path');
 
 var app = express();
 var PORT = process.env.PORT || 3000;
+
+var passport = require('passport');
+var session = require('express-session');
 
 // Require models for syncing
 var db = require("./models");
@@ -14,17 +17,19 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
-    
+
+// For Passport
+app.use(session({ secret: 'monarchy',resave: true, saveUninitialized:true})); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+
 // Routes
-require("./routes/api-routes.js")(app);
-require("./routes/html-routes.js")(app);
+// require("./routes/api-routes")(app);
+// require("./routes/html-routes")(app);
 
-// app.get('/', function(req, res) {
-//   res.sendFile(path.join(__dirname, 'index.html'));
-// });
-
-app.get('/googleSignIn', function(req, res) {
-  signIn.googleSignIn();
+// TODO: remove this temporary testing route
+app.get('/', function(req, res) {
+  res.send('Welcome!');
 });
 
 app.use(express.static('./public/'));

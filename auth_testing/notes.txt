@@ -22,3 +22,8 @@ in signIn.js:
 - when using admin initialization only it says "admin.auth.GoogleAuthProvider is not a constructor"
 - when using firebase.initializeApp only it says "auth/operation-not-supported-in-this-environment"
 Right. This makes sense. The documentation did say "
+
+TODO:
+- eliminate firebase modules esp firebaseUI if not used
+- make sure config.json has right info for production
+- remove "force:true" for deployment
