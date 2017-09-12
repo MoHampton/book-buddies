@@ -64,8 +64,7 @@
         <p class="lead">Genres: Military/SCI-FI</p>
         <p class="lead">Decription: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
         <p class="lead">Location: Chapel Hill, NC</p>
-        <a href="#" class="orange-bg button large">Buddies</a>
-        <a href="#" class="orange button large hollow">Join</a>
+        <a href="#" class="orange-bg button large">Join</a>
       </div>
       </div>
     </div>
@@ -73,10 +72,10 @@
 
     <div class="row column">
       <ul class="vertical medium-horizontal menu expanded text-center">
-        <li><a href="#"><div class="stat">28</div><span class="orange">Buddies</span></a></li>
-        <li><a href="#"><div class="stat">43</div><span>Events</span></a></li>
-        <li><a href="#"><div class="stat">95</div><span>Discussions</span></a></li>
-        <li><a href="#"><div class="stat">59</div><span>Polls</span></a></li>
+        <li><a href="#buddies"><div class="stat">28</div><span class="orange">Buddies</span></a></li>
+        <li><a href="#events"><div class="stat">43</div><span>Events</span></a></li>
+        <li><a href="#disc"><div class="stat">95</div><span>Discussions</span></a></li>
+        <li><a href="#poll"><div class="stat">59</div><span>Polls</span></a></li>
       </ul>
     </div>
 
@@ -85,9 +84,9 @@
     <div class="column row">
       <hr>
       <ul class="tabs" data-tabs id="example-tabs">
-        <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Buddies</a></li>
-        <li class="tabs-title"><a href="#panel2">Events</a></li>
-        <li class="tabs-title"><a href="#panel3">Discussion</a></li>
+        <li class="tabs-title is-active"><a href="#panel1" aria-selected="true" id="buddies">Buddies</a></li>
+        <li class="tabs-title"><a href="#panel2" id="events">Events</a></li>
+        <li class="tabs-title"><a href="#panel3" id="disc">Discussion</a></li>
       </ul>
       <div class="tabs-content" data-tabs-content="example-tabs">
         <div class="tabs-panel is-active" id="panel1">
@@ -202,7 +201,7 @@
         </div> <!--/. row small-up-2 medium-up-3-->
 <!-- Third Profile Card -->
 
-          <label>
+          <label id="poll">
             What should we read next?
             <textarea placeholder="Book Title"></textarea>
           </label>
