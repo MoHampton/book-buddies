@@ -1,0 +1,24 @@
+Flow:
+1 user clicks "sign in w Google" button
+2 jQuery .click event listener triggers "front end" firebase .signInWithPopup method
+3 user is now signed in, in the browser client. Promise returns user object, which...
+4 we then pass to the back end? Make a call to an API route, passing the user object?
+5 that endpoint then:
+6 first queries the database to see IF the user already exists, and
+7 if so does a sequelize .findOne() method to get full user data, which it in turn passes to... something (the browser?)... to have on hand until logout
+8 if not does sequelize User.create()
+
+OR:
+1 user clicks "sign in w Google" button
+2 jQuery .click event listener triggers a call to our own auth API endpoint
+3 through some magic as yet unknown to me, Node, behind the scenes, makes a call to Google auth API and recieves the same user object as above
+4 pass that user object to another of our own API endpoints to continue with steps 5-8 above
+
+But G. Willikers--there's gotta be some way to make that popup pop up in the browser, for the user to say "I wanna log in with THIS account" 
+and provide the password if not already signed into Google. Can Node do that from the backend?
+
+9/11 4:01 troubleshooting:
+in signIn.js:
+- when using admin initialization only it says "admin.auth.GoogleAuthProvider is not a constructor"
+- when using firebase.initializeApp only it says "auth/operation-not-supported-in-this-environment"
+Right. This makes sense. The documentation did say "
