@@ -1,36 +1,38 @@
 ﻿<!DOCTYPE html>
 <html class="no-js" lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Buddies</title>
-     <link rel="shortcut icon" type="image/png" href="assets/img/crown.png">
+    <link rel="shortcut icon" type="image/png" href="assets/img/crown.png">
     <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="assets/foundation-icons/foundation-icons.css">
     <link rel="stylesheet" href="assets/css/foundation.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
 
-<!-- Navigation Mobile Responsive-->
+    <!-- Navigation Mobile Responsive-->
     <div class="title-bar" data-responsive-toggle="book-menu" data-hide-for="medium">
-      <button class="menu-icon" type="button" data-toggle="book-menu"></button>
-      <div class="orange title-bar-title">Book Buddies</div>
+        <button class="menu-icon" type="button" data-toggle="book-menu"></button>
+        <div class="orange title-bar-title">Book Buddies</div>
     </div>
     <div class="top-bar" id="book-menu">
-      <div class="top-bar-left">
-        <ul class="dropdown menu" data-dropdown-menu>
-          <li class="orange menu-text">Book Buddies</li>
-          <li><a class="orange" href="#">Home</a></li>
-          <li><a class="orange" href="#about">About</a></li>
-          <li><a class="orange" href="bookclubs.html" target="_blank">Book Clubs</a></li>
-        </ul>
-      </div>
-      <div class="top-bar-right">
-        <ul class="menu">
-            <li><a class=href="#">My Account</a></li>
-            <li><a class="orange-bg button" data-open="profileModal">Login</a></li>
+        <div class="top-bar-left">
+            <ul class="dropdown menu" data-dropdown-menu>
+                <li class="orange menu-text">Book Buddies</li>
+                <li><a class="orange" href="#">Home</a></li>
+                <li><a class="orange" href="#about">About</a></li>
+                <li><a class="orange" href="bookclubs.html" target="_blank">Book Clubs</a></li>
+            </ul>
+        </div>
+        <div class="top-bar-right">
+            <ul class="menu">
+                <li><a class=href="#">My Account</a></li>
+                <li><a class="orange-bg button" data-open="profileModal">Login</a></li>
                 <div class="reveal" id="profileModal" data-reveal>
                     <div class="login-box">
                         <div class="row collapse expanded">
@@ -41,22 +43,22 @@
                                     <input class="login-box-input" type="password" name="password" placeholder="Password" />
                                     <input class=" orange login-box-submit-button" type="submit" name="signup_submit" value="Log In" />
                                 </div>
-                            <div class="small-12 medium-6 column small-order-1 medium-order-2 login-box-social-section">
-                                <div class="login-box-social-section-inner">
+                                <div class="small-12 medium-6 column small-order-1 medium-order-2 login-box-social-section">
+                                    <div class="login-box-social-section-inner">
                                         <span class="login-box-social-headline">Sign in with<br />your social network</span>
                                         <a class="login-box-social-button-facebook">Log in with Facebook</a>
                                         <a class="login-box-social-button-twitter">Log in with Twitter</a>
                                         <a class="login-box-social-button-google">Log in with Google+</a>
+                                    </div>
                                 </div>
-                            </div>
                             </div>
                         </div>
                     </div>
-                    </div>
-        </ul>
-      </div>
+                </div>
+            </ul>
+        </div>
     </div>
-<!-- /Navigation -->
+    <!-- /Navigation -->
 
     <div class="intro">
         <div class="row">
@@ -69,56 +71,61 @@
                             </div>
                             <br>
                             <h2>Welcome to <a class="orange">Book Buddies</a></h2><br><br>
-                                <!-- Triggers the modal -->
-                                <a><button class="secondary hollow button" data-open="LoginModal">Sign Up</a>
+                            <!-- Triggers the modal -->
+                            <a><button class="secondary hollow button" data-open="LoginModal">Sign Up</a>
 
-                                <!--Login Modal Box -->
-                                <div class="reveal" id="LoginModal" data-reveal>
-                                    <div class="login-box">
-                                        <div class="row collapse expanded">
-                                            <div class="small-12 medium-6 column small-order-2 medium-order-1 login-box-social-section">
-                                                <div class="login-box-social-section-inner">
-                                                    <span class="login-box-social-headline">Sign in ...</span>
-                                                    <a class="login-box-social-button-facebook">Log in with facebook</a>
-                                                    <a class="login-box-social-button-twitter">Log in with Twitter</a>
-                                                    <a class="login-box-social-button-google">  Log in with Google</a>
-                                                </div> <!-- /.login-box-social-section-inner -->
+                            <!--Login Modal Box -->
+                            <div class="reveal" id="LoginModal" data-reveal>
+                                <div class="login-box">
+                                    <div class="row collapse expanded">
+                                        <div class="small-12 medium-6 column small-order-2 medium-order-1 login-box-social-section">
+                                            <div class="login-box-social-section-inner">
+                                                <span class="login-box-social-headline">Sign in ...</span>
+                                                <a class="login-box-social-button-facebook">Log in with facebook</a>
+                                                <a class="login-box-social-button-twitter">Log in with Twitter</a>
+                                                <a class="login-box-social-button-google">  Log in with Google</a>
                                             </div>
-                                            <div class="small-12 medium-6 column small-order-1 medium-order-2">
-                                                <div class="login-box-form-section">
-                                                    <form method="POST" action="/signup" id="signup-form">
-                                                        <h1 class="login-box-title">Sign up</h1>
-                                                        <input class="login-box-input" type="text" name="firstname" placeholder="First Name" />
-                                                        <input class="login-box-input" type="text" name="lastname" placeholder="Last Name" />
-                                                        <input class="login-box-input" type="text" name="username" placeholder="Username" />
-                                                        <input class="login-box-input" type="email" name="email" placeholder="E-mail" />
-                                                        <input class="login-box-input" type="password" name="password" placeholder="Password" />
-                                                        <input class="login-box-input" type="password" name="password2" placeholder="Retype password" />
-                                                        <input class="login-box-submit-button" type="submit" name="signup_submit" value="Sign me up" />
-                                                    </form>
-                                                </div> <!--/.login-box-form-section" -->
-                                                <div class="or">OR</div>
+                                            <!-- /.login-box-social-section-inner -->
+                                        </div>
+                                        <div class="small-12 medium-6 column small-order-1 medium-order-2">
+                                            <div class="login-box-form-section">
+                                                <form method="POST" action="/signup" id="signup-form">
+                                                    <h1 class="login-box-title">Sign up</h1>
+                                                    <input class="login-box-input" type="text" name="firstname" placeholder="First Name" />
+                                                    <input class="login-box-input" type="text" name="lastname" placeholder="Last Name" />
+                                                    <input class="login-box-input" type="text" name="username" placeholder="Username" />
+                                                    <input class="login-box-input" type="email" name="email" placeholder="E-mail" />
+                                                    <input class="login-box-input" type="password" name="password" placeholder="Password" />
+                                                    <input class="login-box-input" type="password" name="password2" placeholder="Retype password" />
+                                                    <input class="login-box-submit-button" type="submit" name="signup_submit" value="Sign me up" />
+                                                </form>
                                             </div>
-                                        </div> <!-- /.row collapse expanded-->
-                                    </div> <!-- /.login-box -->
-                                 <!-- <button class="close-button" data-close aria-label="Close modal" type="button">
+                                            <!--/.login-box-form-section" -->
+                                            <div class="or">OR</div>
+                                        </div>
+                                    </div>
+                                    <!-- /.row collapse expanded-->
+                                </div>
+                                <!-- /.login-box -->
+                                <!-- <button class="close-button" data-close aria-label="Close modal" type="button">
                                     <span aria-hidden="true">&times;</span>
                                   </button> -->
-                                </div> <!-- /.reveal -->
-                          
-                                <!--Login Modal Box -->
                             </div>
+                            <!-- /.reveal -->
+
+                            <!--Login Modal Box -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
     <div class="about">
         <div class="row">
             <div class="large-12 columns">
                 <h3> About <a name="about" class="orange"> <b> Book Buddies </b></a></h3>
-                Finally, a social media site to find coveted book clubs and share the stories you love.                  
+                Finally, a social media site to find coveted book clubs and share the stories you love.
                 <br>
             </div>
         </div>
@@ -137,61 +144,63 @@
         <h3 class="text-center"> Meet <span class="orange"> <b> The Buddies </b></span></h3>
     </div>
 
-<div class="grid-container">
-      <div class="grid-x grid-margin-x">
-        <div class="cell small-4">
-            <div class="column">
-                <div class="callout">
-                    <div class="buddy-member">
-                        <img class="thumbnail buddy-img" src="assets/img/Mo.png">
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x">
+            <div class="cell small-4">
+                <div class="column">
+                    <div class="callout">
+                        <div class="buddy-member">
+                            <img class="thumbnail buddy-img" src="assets/img/Mo.png">
                             <h5>Mo</h5>
                             <p>"Bad Ass" Book Club</p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                             consequat.
-                    </div> <!-- /.buddy-member-mo -->
-                </div> <!-- /.callout -->
-            </div> <!--column -->
-        </div>
-    <div class="cell small-4">
-        <div class="column">
-            <div class="callout">
-                <div class="buddy-member">
-                    <img class="thumbnail buddy-img" src="assets/img/Marc.png">
-                    <div>
-                        <h5> Marc </h5>
-                        <p>"Bro" Book Club</p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat.
+                        </div>
+                        <!-- /.buddy-member-mo -->
+                    </div>
+                    <!-- /.callout -->
+                </div>
+                <!--column -->
+            </div>
+            <div class="cell small-4">
+                <div class="column">
+                    <div class="callout">
+                        <div class="buddy-member">
+                            <img class="thumbnail buddy-img" src="assets/img/Marc.png">
+                            <div>
+                                <h5> Marc </h5>
+                                <p>"Bro" Book Club</p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                commodo consequat.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cell small-4">
+                <div class="column">
+                    <div class="callout">
+                        <div class="buddy-member">
+                            <img class="thumbnail buddy-img" src="assets/img/Andy.png">
+                            <div>
+                                <h5>Andy</h5>
+                                <p>"Symphonic" Book Club</p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                commodo consequat.
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- grid-x grid-margin-x -->
     </div>
-    <div class="cell small-4">
-        <div class="column">
-            <div class="callout">
-                <div class="buddy-member">
-                    <img class="thumbnail buddy-img" src="assets/img/Andy.png">
-                    <div>
-                        <h5>Andy</h5>
-                        <p>"Symphonic" Book Club</p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div> <!-- grid-x grid-margin-x -->
-</div><!-- grid-container -->
+    <!-- grid-container -->
 
-<!--email subscription
+    <!--email subscription
     <div class="subscribe">
         <div class="row">
             <div class="large-12 columns">
@@ -209,8 +218,8 @@
     </div>
     -->
 
-<!--Removed Blog for now -->
-<!--    <div class="blog">
+    <!--Removed Blog for now -->
+    <!--    <div class="blog">
         <h3 class="text-center"> Browse <span class="orange"> <b> Our Book Blog </b></span></h3>
         <div class="row">
     <ul class="calendar">
@@ -237,7 +246,7 @@
 </div>
 -->
     <!-- Repeat for additional weeks -->
-<!--
+    <!--
 
 </ul>
             <div class="medium-4 large-4 columns">
@@ -275,14 +284,14 @@
         <div class="row">
             <div class="large-12 columns">
                 <h5> Looking for more BOOK BUDDIES? <br> Create a Book Club... </h5>
-        
+
                 <a class="dark-blue-bg button" href="bookclubs.html#newClub" target="_blank">Book Club Builder</a>
             </div>
         </div>
     </div>
 
-   <!-- Extra Div Section -->
-   <!-- <div class="comingSoon">
+    <!-- Extra Div Section -->
+    <!-- <div class="comingSoon">
         <div style="background-color:rgba(0,0,0,0.7); min-height:100%; padding:32px; width:100%;">
             <div class="row">
                 <div class="large-12 columns">
@@ -295,7 +304,7 @@
             </div>
         </div>
     </div> -->
-   <!-- Extra Div Section -->
+    <!-- Extra Div Section -->
 
     <div class="footer">
         <div class="row">
@@ -313,21 +322,6 @@
         </div>
     </div>
 
-        
-    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
-    <script>
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyBq75ygfcq_VsDP2UkBwRjgGabwWS-gZJg",
-        authDomain: "book-buddies-b7e5a.firebaseapp.com",
-        databaseURL: "https://book-buddies-b7e5a.firebaseio.com",
-        projectId: "book-buddies-b7e5a",
-        storageBucket: "book-buddies-b7e5a.appspot.com",
-        messagingSenderId: "582731739757"
-    };
-    firebase.initializeApp(config);
-    </script>
-
     <script src="assets/js/vendor/jquery.js"></script>
     <script src="assets/js/vendor/foundation.min.js"></script>
     <script>
@@ -335,4 +329,5 @@
     </script>
     <script src="assets/js/app.js"></script>
 </body>
+
 </html>
