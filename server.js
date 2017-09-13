@@ -24,12 +24,12 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
 // load passport strategies
-require('./config/passport/passport.js')(passport, db.user);
+require('./config/passport/passport.js')(passport, db.User);
 
 // TODO: reinstate these after they're built out and are actually exporting
 // Routes
 // require("./routes/api-routes")(app);
-// require("./routes/html-routes")(app);
+require("./routes/html-routes")(app);
 
 var authRoute = require('./routes/auth-routes.js')(app, passport);
 
@@ -51,6 +51,7 @@ app.use(express.static('./public/'));
 // });
 
 // Syncing sequelize models and then starting Express app
+// TODO: remove "force: true" before deploying
 db.sequelize.sync({ force: true }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
