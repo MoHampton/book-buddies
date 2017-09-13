@@ -23,9 +23,15 @@ app.use(session({ secret: 'monarchy',resave: true, saveUninitialized:true})); //
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
+// load passport strategies
+require('./config/passport/passport.js')(passport, db.user);
+
+// TODO: reinstate these after they're built out and are actually exporting
 // Routes
 // require("./routes/api-routes")(app);
 // require("./routes/html-routes")(app);
+
+var authRoute = require('./routes/auth-routes.js')(app, passport);
 
 // TODO: remove this temporary testing route
 app.get('/', function(req, res) {

@@ -86,12 +86,16 @@
                                             </div>
                                             <div class="small-12 medium-6 column small-order-1 medium-order-2">
                                                 <div class="login-box-form-section">
-                                                    <h1 class="login-box-title">Sign up</h1>
-                                                    <input class="login-box-input" type="text" name="username" placeholder="Username" />
-                                                    <input class="login-box-input" type="email" name="email" placeholder="E-mail" />
-                                                    <input class="login-box-input" type="password" name="password" placeholder="Password" />
-                                                    <input class="login-box-input" type="password" name="password2" placeholder="Retype password" />
-                                                    <input class="login-box-submit-button" type="submit" name="signup_submit" value="Sign me up" />
+                                                    <form method="POST" action="/signup" id="signup-form">
+                                                        <h1 class="login-box-title">Sign up</h1>
+                                                        <input class="login-box-input" type="text" name="firstname" placeholder="First Name" />
+                                                        <input class="login-box-input" type="text" name="lastname" placeholder="Last Name" />
+                                                        <input class="login-box-input" type="text" name="username" placeholder="Username" />
+                                                        <input class="login-box-input" type="email" name="email" placeholder="E-mail" />
+                                                        <input class="login-box-input" type="password" name="password" placeholder="Password" />
+                                                        <input class="login-box-input" type="password" name="password2" placeholder="Retype password" />
+                                                        <input class="login-box-submit-button" type="submit" name="signup_submit" value="Sign me up" />
+                                                    </form>
                                                 </div> <!--/.login-box-form-section" -->
                                                 <div class="or">OR</div>
                                             </div>
