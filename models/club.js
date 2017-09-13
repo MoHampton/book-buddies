@@ -52,6 +52,10 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
+    Club.associate = function(models) {
+        Club.hasMany(models.Association);
+    }
+
     return Club;
 };
 
