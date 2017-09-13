@@ -16,9 +16,28 @@ module.exports = function (app, passport) {
   // User will POST either new or returning user data,
   // and then we'll route it to an auth API
 
+  // new user signup:
   app.post('/signup', passport.authenticate('local-signup', {
     successRedirect: '/dashboard',
     failureRedirect: '/signup'
   }
   ));
+
+  // returning user signin:
+  app.post('/signin', passport.authenticate('local-signin', {
+    successRedirect: '/dashboard',
+    failureRedirect: '/signin'
+  }
+  ));
+
+  app.get('/dashboard', isLoggedIn, authController.dashboard);
+
+  app.get('/logout', authController.logout);
+
+  function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) {
+      return next();
+    }
+    res.redirect('/');
+  }
 }
