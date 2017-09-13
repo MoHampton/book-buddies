@@ -12,6 +12,11 @@
             <!-- Triggers the modal -->
             <a><button class="secondary hollow button" data-open="LoginModal">Sign Up</a>
 
+            {{!-- Will user ever be seeing this screen again after login?
+            If yes, we could make the login modal box below--and the button above, and anything else saying "sign in" or "sign up"
+            --dynamic. We could make the modal below a separate .hbs file and feed in a "welcome, you're logged in!" message after login.
+            OR--my vote--we could just make future calls to '/' redirect to '/dashboard' after login. (how?...) --}}
+
             <!--Login Modal Box -->
             <div class="reveal" id="LoginModal" data-reveal>
               <div class="login-box">
@@ -28,6 +33,7 @@
                   <div class="small-12 medium-6 column small-order-1 medium-order-2">
                     <div class="login-box-form-section">
                       <form method="POST" action="/signup" id="signup-form">
+                      {{!-- TODO: create a '/signin' option with just email and password options? --}}
                         <h1 class="login-box-title">Sign up</h1>
                         <input class="login-box-input" type="text" name="firstname" placeholder="First Name" />
                         <input class="login-box-input" type="text" name="lastname" placeholder="Last Name" />
@@ -72,8 +78,11 @@
   <div class="row">
     <div class="large-12 columns">
       <h4>Friends Don't Let Friends Read Alone...</h4>
-      {{!-- TODO: This link is here, on the UN-auth-protected home page. What will happen when a not-signed-in user clicks it?
-      Sign-in modal launches, redirecting to '/dashboard' on redirect? --}}
+      {{!-- 
+      TODO: This link is here, on the UN-auth-protected home page. What will happen when a not-signed-in user clicks it?
+      Sign-in modal launches, redirecting to '/dashboard' on login? 
+      Or do we need a view that lists all clubs, for the un-signed-up to browse, without the user-specific sidebar?
+      --}}
       <a class="orange-bg button" href="bookclubs.html" target="_blank">JOIN A CLUB</a>
     </div>
 
@@ -84,6 +93,10 @@
   <h3 class="text-center"> Meet <span class="orange"> <b> The Buddies </b></span></h3>
 </div>
 
+{{!-- These cells have user data, but they also have club data. They show "founding" or moderator members of certain clubs, right?
+That will mean a query to Clubs, get "moderator" value, and then join User data for that user.
+How many clubs will be represented here? a random selection of three?
+Anyway, will be a .hbs view --}}
 <div class="grid-container">
   <div class="grid-x grid-margin-x">
     <div class="cell small-4">
@@ -221,7 +234,11 @@
   <div class="row">
     <div class="large-12 columns">
       <h5> Looking for more BOOK BUDDIES? <br> Create a Book Club... </h5>
-
+      {{!-- 
+      TODO: Like above: 
+      This link is here, on the UN-auth-protected home page. What will happen when a not-signed-in user clicks it?
+      Sign-in modal launches, redirecting after login? Or remove from this page?
+      --}}
       <a class="dark-blue-bg button" href="bookclubs.html#newClub" target="_blank">Book Club Builder</a>
     </div>
   </div>
@@ -247,6 +264,9 @@
   <div class="row">
     <div class="large-12 columns">
       <div class="footer-social">
+        {{!-- 
+        TODO: link up
+         --}}
         <i class="fi fi-social-facebook"></i>
         <i class="fi fi-social-twitter"></i>
         <i class="fi fi-social-instagram"></i>

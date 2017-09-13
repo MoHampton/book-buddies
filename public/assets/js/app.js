@@ -1,3 +1,5 @@
+// TODO: rebuild federated login options using passport
+
 // function googleSignIn() {
 //   var provider = new firebase.auth.GoogleAuthProvider();
 //   firebase.auth().signInWithPopup(provider).then(function (result) {
@@ -74,15 +76,15 @@
 //   facebookSignIn();
 // });
 
-$(".login-box-social-button-facebook").click(function (e) {
-  e.preventDefault();
-  facebookSignIn();
-});
+// $(".login-box-social-button-facebook").click(function (e) {
+//   e.preventDefault();
+//   facebookSignIn();
+// });
 
-$(".login-box-social-button-twitter").click(function (e) {
-  e.preventDefault();
-  twitterSignIn();
-});
+// $(".login-box-social-button-twitter").click(function (e) {
+//   e.preventDefault();
+//   twitterSignIn();
+// });
 
 /* ----- CARD PROFILE STATS ------- */
 
