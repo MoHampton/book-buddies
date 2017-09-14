@@ -52,8 +52,8 @@
               <img class="card-profile-stats-intro-pic" src="https://i.pinimg.com/236x/15/73/fc/1573fc7afb3f5e3f0c0c70803fea230e--book-art-collage-book.jpg" alt="profile-image"
               />
               <div class="card-profile-stats-intro-content">
-                <h3>Joe Smith</h3>
-                <p> Chapel Hill, NC </p>
+                <h3>{{firstName}}, {{lastName}}</h3>
+                <p> {{location}} </p>
               </div>
               <!-- /.card-profile-stats-intro-content -->
             </div>
@@ -63,7 +63,8 @@
 
             <div class="card-profile-stats-container">
               <div class="card-profile-stats-statistic">
-                <span class="stat">5</span>
+<!-- Not sure what to place for club associations data field-->
+               <span class="stat">{{associations}}</span>
                 <p class="orange">Clubs</p>
               </div>
               <!-- /.card-profile-stats-statistic -->
@@ -78,10 +79,7 @@
             <div class="card-profile-stats-more">
               <p class="card-profile-stats-more-link"><a href="#"><i class="fa fa-angle-down" aria-hidden="true"></i></a></p>
               <div class="card-profile-stats-more-content">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem libero fugit, pariatur maxime! Optio enim, deserunt
-                  quia molestiae fugiat delectus, dolore et esse nostrum, quod autem necessitatibus fugit soluta repellendus.
-                </p>
+                <p> {{bio}}</p>
               </div>
               <!-- /.card-profile-stats-more-content -->
             </div>
@@ -104,26 +102,12 @@
               <img class="thumbnail" src="http://placehold.it/200x200">
             </div>
             <div class="media-object-section">
-              <h5>Mike Stevenson</h5>
-              <p>I'm going to improvise. Listen, there's something you should know about me... about inception. An idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It can grow to define or destroy you.</p>
-            </div>
-          </div>
-          <div class="media-object stack-for-small">
-            <div class="media-object-section">
-              <img class="thumbnail" src="http://placehold.it/200x200">
-            </div>
-            <div class="media-object-section">
-              <h5>Mike Stevenson</h5>
-              <p>I'm going to improvise. Listen, there's something you should know about me... about inception. An idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It can grow to define or destroy you</p>
-            </div>
-          </div>
-          <div class="media-object stack-for-small">
-            <div class="media-object-section">
-              <img class="thumbnail" src="http://placehold.it/200x200">
-            </div>
-            <div class="media-object-section">
-              <h5>Mike Stevenson</h5>
-              <p>I'm going to improvise. Listen, there's something you should know about me... about inception. An idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It can grow to define or destroy you</p>
+              <h5>{{#each Club}}</h5>
+              <p>{{this.clubName}}</p>
+              <p>{{this.location}}</p>
+              <p>{{this.genre}}</p>
+              <p>{{this.description}}</p>
+              {{/each}}
             </div>
           </div>
         </div>
@@ -140,10 +124,8 @@
       </div> 
     </div>
 </div>
-
-
-        </div>
-      </div>
+</div>
+</div>
 
 
       <!-- Footer -->
