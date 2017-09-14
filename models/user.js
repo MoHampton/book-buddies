@@ -43,6 +43,10 @@ module.exports = function(sequelize, DataTypes) {
         favoriteBooks: {
             type: DataTypes.TEXT,
             allowNull: true,
+        },
+        photo: {
+            type: DataTypes.STRING,
+            allowNull: true,
         }
 
     });
