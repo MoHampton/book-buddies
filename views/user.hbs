@@ -52,8 +52,10 @@
               <img class="card-profile-stats-intro-pic" src="https://i.pinimg.com/236x/15/73/fc/1573fc7afb3f5e3f0c0c70803fea230e--book-art-collage-book.jpg" alt="profile-image"
               />
               <div class="card-profile-stats-intro-content">
-                <h3>{{firstName}}, {{lastName}}</h3>
+                {{#each User}}
+                <h3>{{firstName}} {{lastName}}</h3>
                 <p> {{location}} </p>
+                {{/each}}
               </div>
               <!-- /.card-profile-stats-intro-content -->
             </div>
@@ -63,9 +65,11 @@
 
             <div class="card-profile-stats-container">
               <div class="card-profile-stats-statistic">
+                {{#each User}}
 <!-- Not sure what to place for club associations data field-->
-               <span class="stat">{{associations}}</span>
-                <p class="orange">Clubs</p>
+               <span class="stat">{{favoriteBooks}}</span>
+                <p class="orange">Favorite Books</p>
+                {{/each}}
               </div>
               <!-- /.card-profile-stats-statistic -->
              <!-- <div class="card-profile-stats-statistic">
@@ -102,8 +106,8 @@
               <img class="thumbnail" src="http://placehold.it/200x200">
             </div>
             <div class="media-object-section">
-              <h5>{{#each Club}}</h5>
-              <p>{{this.clubName}}</p>
+              <div class="userBookClubs">{{#each Club}}</div>
+              <h5>{{this.clubName}}</h5>
               <p>{{this.location}}</p>
               <p>{{this.genre}}</p>
               <p>{{this.description}}</p>
