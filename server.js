@@ -26,7 +26,7 @@ app.use(passport.session()); // persistent login sessions
 // load passport strategies
 require('./config/passport/passport.js')(passport, db.User);
 
-Routes
+// Routes
 require("./routes/api-routes")(app);
 require("./routes/html-routes")(app);
 
@@ -35,10 +35,13 @@ var authRoute = require('./routes/auth-routes.js')(app, passport);
 app.use(express.static('./public/'));
 
 // Set Handlebars
-const exphbs = require("express-handlebars");
-
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+var exphbs = require("express-handlebars");
+app.set('views', './views')
+app.engine("hbs", exphbs({
+  defaultLayout: "main",
+  extname: '.hbs'
+}));
+app.set("view engine", ".hbs");
 
 // Syncing sequelize models and then starting Express app
 // TODO: remove "force: true" before deploying
