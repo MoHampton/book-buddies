@@ -1,5 +1,11 @@
+var db = require('../models');
+
 module.exports = function(app) {
-  // on get '/' render index.html, aka splash screen
+  // on get '/' render contents of index.html, aka splash screen
+  app.get('/', function(req, res) {
+    // sequelize stuff, .then
+    res.render
+  })
 
   // on get '/dashboard' render contents of bookclubs.html, w differentiation for users in clubs / not in clubs
 
