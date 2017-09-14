@@ -18,19 +18,22 @@ module.exports = function (app, passport) {
 
   // new user signup:
   app.post('/signup', passport.authenticate('local-signup', {
-    successRedirect: '/dashboard',
+    successRedirect: '/user',
     failureRedirect: '/signup'
   }
   ));
+  // Thoughts: how do I use authentication state to load sub-portions of pages via routing?
 
   // returning user signin:
   app.post('/signin', passport.authenticate('local-signin', {
-    successRedirect: '/dashboard',
+    successRedirect: '/user',
     failureRedirect: '/signin'
   }
   ));
 
-  app.get('/dashboard', isLoggedIn, authController.dashboard);
+  app.get('/user', isLoggedIn, authController.user);
+
+  // app.get('/ubookclubs', isLoggedIn, authController.ubookclubs);
 
   app.get('/logout', authController.logout);
 

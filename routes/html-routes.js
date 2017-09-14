@@ -3,11 +3,12 @@ var db = require('../models');
 module.exports = function(app) {
   // on get '/' render contents of index.html, aka splash screen
   app.get('/', function(req, res) {
-    // sequelize stuff, .then
-    res.render
+    // no sequelize stuff needed?
+    res.render("index");
   })
 
-  // on get '/dashboard' render contents of bookclubs.html, w differentiation for users in clubs / not in clubs
+  // on get '/ubookclubs' render contents of ubookclubs.html
+    // That's a job for auth-routes.js, since it's auth-protected
 
   // on get '/club:id' render contents of club.html, customized w data from individual club, as determined by req.params.id
   

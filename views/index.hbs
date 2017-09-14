@@ -15,7 +15,7 @@
             {{!-- Will user ever be seeing this screen again after login?
             If yes, we could make the login modal box below--and the button above, and anything else saying "sign in" or "sign up"
             --dynamic. We could make the modal below a separate .hbs file and feed in a "welcome, you're logged in!" message after login.
-            OR--my vote--we could just make future calls to '/' redirect to '/dashboard' after login. (how?...) --}}
+            OR--my vote--we could just make future calls to '/' redirect to '/ubookclubs' after login. (how?...) --}}
 
             <!--Login Modal Box -->
             <div class="reveal" id="LoginModal" data-reveal>
@@ -33,7 +33,6 @@
                   <div class="small-12 medium-6 column small-order-1 medium-order-2">
                     <div class="login-box-form-section">
                       <form method="POST" action="/signup" id="signup-form">
-                      {{!-- TODO: create a '/signin' option with just email and password options? --}}
                         <h1 class="login-box-title">Sign up</h1>
                         <input class="login-box-input" type="text" name="firstname" placeholder="First Name" />
                         <input class="login-box-input" type="text" name="lastname" placeholder="Last Name" />

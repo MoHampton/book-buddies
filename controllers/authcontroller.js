@@ -6,12 +6,12 @@ exports.signup = function (req, res) {
 
 // maybe an exports.signin
 
-exports.dashboard = function (req, res) {
+exports.user = function (req, res) {
   // replace w real res.render, providing content currently in bookclubs.html,
   // preferably w differentiation based on user data
   // (no clubs joined? show "Select a club" text and list of all clubs.
   // Use has joined clubs? show user's clubs w "Your clubs" text, and recommended clubs.)
-  res.send('Dashboard view goes here!');
+  res.send(req.params.id);
 }
 
 exports.logout = function (req, res) {
