@@ -670,8 +670,6 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   position: relative;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
 }
 
 .flip-card-inner-front,
