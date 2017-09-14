@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
+    "username": "pwd123",
     "password": "Si2tmotmml?",
     "database": "bookbuddies",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
