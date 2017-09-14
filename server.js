@@ -26,28 +26,19 @@ app.use(passport.session()); // persistent login sessions
 // load passport strategies
 require('./config/passport/passport.js')(passport, db.User);
 
-// TODO: reinstate these after they're built out and are actually exporting
-// Routes
-// require("./routes/api-routes")(app);
+Routes
+require("./routes/api-routes")(app);
 require("./routes/html-routes")(app);
 
 var authRoute = require('./routes/auth-routes.js')(app, passport);
 
-// TODO: remove this temporary testing route
-/*  res.send('Welcome!');
-});*/
-
 app.use(express.static('./public/'));
 
-// set up Firebase tools
-// var admin = require("firebase-admin");
+// Set Handlebars
+const exphbs = require("express-handlebars");
 
-// var serviceAccount = require("./config/book-buddies-b7e5a-firebase-adminsdk-qya3g-ac91129f5a.json");
-
-// admin.initializeApp({
-//   credential: admin.credential.cert(serviceAccount),
-//   databaseURL: "https://book-buddies-b7e5a.firebaseio.com"
-// });
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 // Syncing sequelize models and then starting Express app
 // TODO: remove "force: true" before deploying
