@@ -198,6 +198,14 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
+.smash {
+    background-color: white;
+    color: #fff;
+    min-height: 50px;
+    padding: 10px;
+    text-align: center;
+}
+
 /* Map */
 
 

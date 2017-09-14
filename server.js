@@ -34,9 +34,8 @@ require("./routes/html-routes")(app);
 var authRoute = require('./routes/auth-routes.js')(app, passport);
 
 // TODO: remove this temporary testing route
-app.get('/', function(req, res) {
-  res.send('Welcome!');
-});
+/*  res.send('Welcome!');
+});*/
 
 app.use(express.static('./public/'));
 

@@ -14,53 +14,97 @@
 
 <body>
 
-   <div class="title-bar" data-responsive-toggle="book-menu" data-hide-for="medium">
+  <!-- Navigation Mobile Responsive-->
+  <div class="title-bar" data-responsive-toggle="book-menu" data-hide-for="medium">
     <button class="menu-icon" type="button" data-toggle="book-menu"></button>
     <div class="orange title-bar-title">Book Buddies</div>
   </div>
   <div class="top-bar" id="book-menu">
-    <div class="top-bar-left">
-      <ul class="dropdown menu" data-dropdown-menu>
-        <li class="orange menu-text">Book Buddies</li>
-        <li><a class="orange" href="index.html">Home</a></li>
-        <li><a class="orange" href="index.html#about">About</a></li>
-        <li><a class="orange" href="bookclubs.html" target="_blank">Book Clubs</a></li>
-      </ul>
-    </div>
-
     <div class="top-bar-right">
       <ul class="menu">
-        <li><a class=href="#">My Account</a></li>
-        <li><a class="orange-bg button" data-open="profileModal">Login</a></li>
-        <div class="reveal" id="profileModal" data-reveal>
-          <div class="login-box">
-            <div class="row collapse expanded">
-              <div class="small-12 medium-6 column small-order-2 medium-order-1">
-                <div class="login-box-form-section">
-                  <h1 class="login-box-title">Welcome Back, <a class="orange"> Buddy!</a></h1>
-                  <input class="login-box-input" type="text" name="username" placeholder="Username" />
-                  <input class="login-box-input" type="password" name="password" placeholder="Password" />
-                  <input class=" orange login-box-submit-button" type="submit" name="signup_submit" value="Log In" />
-                </div>
-                <div class="small-12 medium-6 column small-order-1 medium-order-2 login-box-social-section">
-                  <div class="login-box-social-section-inner">
-                    <span class="login-box-social-headline">Sign in with<br />your social network</span>
-                    <a class="login-box-social-button-facebook">Log in with Facebook</a>
-                    <a class="login-box-social-button-twitter">Log in with Twitter</a>
-                    <a class="login-box-social-button-google">Log in with Google+</a>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="orange-bg button" href="index.html#profileModal">Login</a></li>
+        <!-- Modal is awkwardly sized -->
+        <!--
+            <div class="reveal" id="profileModal" data-reveal>
+              <div class="login-box">
+                <div class="row collapse expanded">
+                  <div class="small-12 medium-6 column small-order-2 medium-order-1">
+                    <div class="login-box-form-section">
+                      <h1 class="login-box-title">Welcome Back, <a class="orange"> Buddy!</a></h1>
+                        <input class="login-box-input" type="text" name="username" placeholder="Username" />
+                        <input class="login-box-input" type="password" name="password" placeholder="Password" />
+                        <input class=" orange login-box-submit-button" type="submit" name="signup_submit" value="Log In" />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
       </ul>
-      </div>
-      </div>
+    </div>
+  </div>
+  <!-- /Navigation -->
 
 
+
+
+        <div class="callout" id="bcTop">
+          <div class="row column">
+            <h1>Hello! Select A Book Club.</h1>
+            <p class="lead">With many genres to choose from, select the club that will share your love for books.</p>
+          </div>
+        </div>
+        <!--Side Profile Bar -->
+
+<div class="grid-x grid-margin-x">
+ <div class="small-1 cell"></div>   
+  <div class="small-2 cell">
+      <br>
+          <div class="card-profile">
+            <div class="card-profile-stats-intro">
+              <img class="card-profile-stats-intro-pic" src="https://i.pinimg.com/236x/15/73/fc/1573fc7afb3f5e3f0c0c70803fea230e--book-art-collage-book.jpg" alt="profile-image"
+              />
+              <div class="card-profile-stats-intro-content">
+                <h3>Joe Smith</h3>
+                <p> Chapel Hill, NC </p>
+              </div>
+              <!-- /.card-profile-stats-intro-content -->
+            </div>
+            <!-- /.card-profile-stats-intro -->
+
+            <hr>
+
+            <div class="card-profile-stats-container">
+              <div class="card-profile-stats-statistic">
+                <span class="stat">5</span>
+                <p class="orange">Clubs</p>
+              </div>
+              <!-- /.card-profile-stats-statistic -->
+             <!-- <div class="card-profile-stats-statistic">
+                <span class="stat">125</span>
+                <p class="orange">Buddies</p>
+              </div> -->
+              <!-- /.card-profile-stats-statistic -->
+            </div>
+            <!-- /.card-profile-stats-container -->
+
+            <div class="card-profile-stats-more">
+              <p class="card-profile-stats-more-link"><a href="#"><i class="fa fa-angle-down" aria-hidden="true"></i></a></p>
+              <div class="card-profile-stats-more-content">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem libero fugit, pariatur maxime! Optio enim, deserunt
+                  quia molestiae fugiat delectus, dolore et esse nostrum, quod autem necessitatibus fugit soluta repellendus.
+                </p>
+              </div>
+              <!-- /.card-profile-stats-more-content -->
+            </div>
+            <!-- /.card-profile-stats-more -->
+          </div>
+          <!-- /.card-profile-stats -->
+    </div>
 
         <!-- Club Flip Cards -->
-        <hr>
-        <div class="row small-up-1 medium-up-2 large-up-3">
+        <div class="row small-up-1 medium-up-2 large-up-2">
           <div class="column">
             <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
               <div class="flip-card-inner">
@@ -169,6 +213,32 @@
 
           <hr>
 
+          <!--New Club Form -->
+          <div class="grid-x" id="newClub">
+            <div class="cell">
+              <div style="background-color:rgba(0,0,0,0.7); min-height:100%; padding:32px; width:100%;">
+                <h3>Can't Find Your Perfect Club?</h3>
+                <h4>Become the ultimate <span class="orange"> Book Buddy </span> and create a new Book Club!</h4>
+                <label>Club Name
+                <input type="text" placeholder="Name">
+              </label>
+                <label>Book Genres
+                <input type="text" placeholder="Romance">
+              </label>
+                <label>Meeting Location
+                <input type="text" placeholder="Chapel Hill, NC">
+              </label>
+                <label>
+                Description
+                <textarea placeholder="Make it good...this is your selling point"></textarea>
+              </label>
+                <input type="submit" class="orange-bg button expanded" value="Submit">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="cell shrink footer">
       &copy; MONARCHY Coding 2017
