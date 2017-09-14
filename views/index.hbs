@@ -1,156 +1,149 @@
-<div class="intro">
-  <div class="row">
-    <div class="large-12 columns">
-      <div style="background-color:rgba(0,0,0,0.7); min-height:100%; width:100%;">
-        <div class="display-table" style="height:600px; width:100%;">
-          <div class="va-align">
-            <div>
-              Read | Enjoy | Share
-            </div>
-            <br>
-            <h2>Welcome to <a class="orange">Book Buddies</a></h2><br><br>
-            <!-- Triggers the modal -->
-            <a><button class="secondary hollow button" data-open="LoginModal">Sign Up</a>
+    <div class="intro">
+        <div class="row">
+            <div class="large-12 columns">
+                <div style="background-color:rgba(0,0,0,0.7); min-height:100%; width:100%;">
+                    <div class="display-table" style="height:600px; width:100%;">
+                        <div class="va-align">
+                            <div>
+                                Read | Enjoy | Share
+                            </div>
+                            <br>
+                            <h2>Welcome to <a class="orange">{{ title }} </a></h2><br><br>
+                            <!-- Triggers the modal -->
+                            <a><button class="secondary hollow button" data-open="LoginModal">Sign Up</a>
 
-            {{!-- Will user ever be seeing this screen again after login?
-            If yes, we could make the login modal box below--and the button above, and anything else saying "sign in" or "sign up"
-            --dynamic. We could make the modal below a separate .hbs file and feed in a "welcome, you're logged in!" message after login.
-            OR--my vote--we could just make future calls to '/' redirect to '/dashboard' after login. (how?...) --}}
-
-            <!--Login Modal Box -->
-            <div class="reveal" id="LoginModal" data-reveal>
-              <div class="login-box">
-                <div class="row collapse expanded">
-                  <div class="small-12 medium-6 column small-order-2 medium-order-1 login-box-social-section">
-                    <div class="login-box-social-section-inner">
-                      <span class="login-box-social-headline">Sign in ...</span>
-                      <a class="login-box-social-button-facebook">Log in with facebook</a>
-                      <a class="login-box-social-button-twitter">Log in with Twitter</a>
-                      <a class="login-box-social-button-google">  Log in with Google</a>
-                    </div>
-                    <!-- /.login-box-social-section-inner -->
-                  </div>
-                  <div class="small-12 medium-6 column small-order-1 medium-order-2">
-                    <div class="login-box-form-section">
-                      <form method="POST" action="/signup" id="signup-form">
-                      {{!-- TODO: create a '/signin' option with just email and password options? --}}
-                        <h1 class="login-box-title">Sign up</h1>
-                        <input class="login-box-input" type="text" name="firstname" placeholder="First Name" />
-                        <input class="login-box-input" type="text" name="lastname" placeholder="Last Name" />
-                        <input class="login-box-input" type="text" name="username" placeholder="Username" />
-                        <input class="login-box-input" type="email" name="email" placeholder="E-mail" />
-                        <input class="login-box-input" type="password" name="password" placeholder="Password" />
-                        <input class="login-box-input" type="password" name="password2" placeholder="Retype password" />
-                        <input class="login-box-submit-button" type="submit" name="signup_submit" value="Sign me up" />
-                      </form>
-                    </div>
-                    <!--/.login-box-form-section" -->
-                    <div class="or">OR</div>
-                  </div>
-                </div>
-                <!-- /.row collapse expanded-->
-              </div>
-              <!-- /.login-box -->
-              <!-- <button class="close-button" data-close aria-label="Close modal" type="button">
+                            <!--Login Modal Box -->
+                            <div class="reveal" id="LoginModal" data-reveal>
+                                <div class="login-box">
+                                    <div class="row collapse expanded">
+                                        <div class="small-12 medium-6 column small-order-2 medium-order-1 login-box-social-section">
+                                            <div class="login-box-social-section-inner">
+                                                <span class="login-box-social-headline">Sign in ...</span>
+                                                <a class="login-box-social-button-facebook">Log in with facebook</a>
+                                                <a class="login-box-social-button-twitter">Log in with Twitter</a>
+                                                <a class="login-box-social-button-google">  Log in with Google</a>
+                                            </div>
+                                            <!-- /.login-box-social-section-inner -->
+                                        </div>
+                                        <div class="small-12 medium-6 column small-order-1 medium-order-2">
+                                            <div class="login-box-form-section">
+                                                <form method="POST" action="/signup" id="signup-form">
+                                                    <h1 class="login-box-title">Sign up</h1>
+                                                    <input class="login-box-input" type="text" name="firstname" placeholder="First Name" />
+                                                    <input class="login-box-input" type="text" name="lastname" placeholder="Last Name" />
+                                                    <input class="login-box-input" type="text" name="username" placeholder="Username" />
+                                                    <input class="login-box-input" type="email" name="email" placeholder="E-mail" />
+                                                    <input class="login-box-input" type="password" name="password" placeholder="Password" />
+                                                    <input class="login-box-input" type="password" name="password2" placeholder="Retype password" />
+                                                    <input class="login-box-submit-button" type="submit" name="signup_submit" value="Sign me up" />
+                                                </form>
+                                            </div>
+                                            <!--/.login-box-form-section" -->
+                                            <div class="or">OR</div>
+                                        </div>
+                                    </div>
+                                    <!-- /.row collapse expanded-->
+                                </div>
+                                <!-- /.login-box -->
+                                <!-- <button class="close-button" data-close aria-label="Close modal" type="button">
                                     <span aria-hidden="true">&times;</span>
                                   </button> -->
+                            </div>
+                            <!-- /.reveal -->
+
+                            <!--Login Modal Box -->
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- /.reveal -->
-
-            <!--Login Modal Box -->
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="about">
-  <div class="row">
-    <div class="large-12 columns">
-      <h3> About <a name="about" class="orange"> <b> Book Buddies </b></a></h3>
-      Finally, a social media site to find coveted book clubs and share the stories you love.
-      <br>
-    </div>
-  </div>
-</div>
-<div class="info">
-  <div class="row">
-    <div class="large-12 columns">
-      <h4>Friends Don't Let Friends Read Alone...</h4>
-      {{!-- 
-      TODO: This link is here, on the UN-auth-protected home page. What will happen when a not-signed-in user clicks it?
-      Sign-in modal launches, redirecting to '/dashboard' on login? 
-      Or do we need a view that lists all clubs, for the un-signed-up to browse, without the user-specific sidebar?
-      --}}
-      <a class="orange-bg button" href="bookclubs.html" target="_blank">JOIN A CLUB</a>
     </div>
 
-  </div>
-</div>
-
-<div class="buddies">
-  <h3 class="text-center"> Meet <span class="orange"> <b> The Buddies </b></span></h3>
-</div>
-
-{{!-- These cells have user data, but they also have club data. They show "founding" or moderator members of certain clubs, right?
-That will mean a query to Clubs, get "moderator" value, and then join User data for that user.
-How many clubs will be represented here? a random selection of three?
-Anyway, will be a .hbs view --}}
-<div class="grid-container">
-  <div class="grid-x grid-margin-x">
-    <div class="cell small-4">
-      <div class="column">
-        <div class="callout">
-          <div class="buddy-member">
-            <img class="thumbnail buddy-img" src="assets/img/Mo.png">
-            <h5>Mo</h5>
-            <p>"Bad Ass" Book Club</p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </div>
-          <!-- /.buddy-member-mo -->
-        </div>
-        <!-- /.callout -->
-      </div>
-      <!--column -->
-    </div>
-    <div class="cell small-4">
-      <div class="column">
-        <div class="callout">
-          <div class="buddy-member">
-            <img class="thumbnail buddy-img" src="assets/img/Marc.png">
-            <div>
-              <h5> Marc </h5>
-              <p>"Bro" Book Club</p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    <div class="about">
+        <div class="row">
+            <div class="large-12 columns">
+                <h3> About <a name="about" class="orange"> <b> Book Buddies </b></a></h3>
+                Finally, a social media site to find coveted book clubs and share the stories you love.
+                <br>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-    <div class="cell small-4">
-      <div class="column">
-        <div class="callout">
-          <div class="buddy-member">
-            <img class="thumbnail buddy-img" src="assets/img/Andy.png">
-            <div>
-              <h5>Andy</h5>
-              <p>"Symphonic" Book Club</p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    <div class="info">
+        <div class="row">
+            <div class="large-12 columns">
+                <h4>Friends Don't Let Friends Read Alone...</h4>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- grid-x grid-margin-x -->
-</div>
-<!-- grid-container -->
 
-<!--email subscription
+        </div>
+    </div>
+
+    <div class="buddies">
+        <h3 class="text-center"> Meet <span class="orange"> <b> The Buddies </b></span></h3>
+    </div>
+
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x">
+            <div class="cell small-4">
+                <div class="column">
+                    <div class="callout">
+                        <div class="buddy-member">
+                            <img class="thumbnail buddy-img" src="assets/img/Mo.png">
+                            <h5>Mo</h5>
+                            <p>"Bad Ass" Book Club</p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat.
+                        </div>
+                        <!-- /.buddy-member-mo -->
+                    </div> <!-- /.callout -->
+                </div> <!--column -->
+            </div>
+            <div class="cell small-4">
+                <div class="column">
+                    <div class="callout">
+                        <div class="buddy-member">
+                            <img class="thumbnail buddy-img" src="assets/img/Marc.png">
+                            <div>
+                                <h5> Marc </h5>
+                                <p>"Bro" Book Club</p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                commodo consequat.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cell small-4">
+                <div class="column">
+                    <div class="callout">
+                        <div class="buddy-member">
+                            <img class="thumbnail buddy-img" src="assets/img/Andy.png">
+                            <div>
+                                <h5>Andy</h5>
+                                <p>"Symphonic" Book Club</p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                commodo consequat.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- grid-x grid-margin-x -->
+    </div><!-- grid-container -->
+
+
+    <div class="smash">
+        <div class="row">
+            <div class="large-12 columns">
+            <a class="orange-bg large expanded button" href="bookclubs.html" target="_blank">JOIN A CLUB</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!--email subscription
     <div class="subscribe">
         <div class="row">
             <div class="large-12 columns">
@@ -168,8 +161,8 @@ Anyway, will be a .hbs view --}}
     </div>
     -->
 
-<!--Removed Blog for now -->
-<!--    <div class="blog">
+    <!--Removed Blog for now -->
+    <!--    <div class="blog">
         <h3 class="text-center"> Browse <span class="orange"> <b> Our Book Blog </b></span></h3>
         <div class="row">
     <ul class="calendar">
@@ -195,8 +188,8 @@ Anyway, will be a .hbs view --}}
     </li>
 </div>
 -->
-<!-- Repeat for additional weeks -->
-<!--
+    <!-- Repeat for additional weeks -->
+    <!--
 
 </ul>
             <div class="medium-4 large-4 columns">
@@ -228,24 +221,22 @@ Anyway, will be a .hbs view --}}
             </div>
         </div>
     </div>
+
+
+    <div class="join">
+        <div class="row">
+            <div class="large-12 columns">
+                <h5> Looking for more BOOK BUDDIES? <br> Create a Book Club... </h5>
+
+                <a class="dark-blue-bg button" href="bookclubs.html#newClub" target="_blank">Book Club Builder</a>
+            </div>
+        </div>
+    </div>
+
     -->
 
-<div class="join">
-  <div class="row">
-    <div class="large-12 columns">
-      <h5> Looking for more BOOK BUDDIES? <br> Create a Book Club... </h5>
-      {{!-- 
-      TODO: Like above: 
-      This link is here, on the UN-auth-protected home page. What will happen when a not-signed-in user clicks it?
-      Sign-in modal launches, redirecting after login? Or remove from this page?
-      --}}
-      <a class="dark-blue-bg button" href="bookclubs.html#newClub" target="_blank">Book Club Builder</a>
-    </div>
-  </div>
-</div>
-
-<!-- Extra Div Section -->
-<!-- <div class="comingSoon">
+    <!-- Extra Div Section -->
+    <!-- <div class="comingSoon">
         <div style="background-color:rgba(0,0,0,0.7); min-height:100%; padding:32px; width:100%;">
             <div class="row">
                 <div class="large-12 columns">
@@ -258,23 +249,20 @@ Anyway, will be a .hbs view --}}
             </div>
         </div>
     </div> -->
-<!-- Extra Div Section -->
+    <!-- Extra Div Section -->
 
-<div class="footer">
-  <div class="row">
-    <div class="large-12 columns">
-      <div class="footer-social">
-        {{!-- 
-        TODO: link up
-         --}}
-        <i class="fi fi-social-facebook"></i>
-        <i class="fi fi-social-twitter"></i>
-        <i class="fi fi-social-instagram"></i>
-        <i class="fi fi-social-linkedin"></i>
-      </div>
-      &copy; MONARCHY Coding 2017.
-      <br>
-      <a class="orange" href="https://github.com/mderoberts/book-buddies" target="_blank">Github</a>
+    <div class="footer">
+        <div class="row">
+            <div class="large-12 columns">
+                <div class="footer-social">
+                    <i class="fi fi-social-facebook"></i>
+                    <i class="fi fi-social-twitter"></i>
+                    <i class="fi fi-social-instagram"></i>
+                    <i class="fi fi-social-linkedin"></i>
+                </div>
+                &copy; MONARCHY Coding 2017.
+                <br>
+                <a class="orange" href="https://github.com/mderoberts/book-buddies" target="_blank">Github</a>
+            </div>
+        </div>
     </div>
-  </div>
-</div>

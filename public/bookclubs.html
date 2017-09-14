@@ -22,9 +22,9 @@
     <div class="top-bar-left">
       <ul class="dropdown menu" data-dropdown-menu>
         <li class="orange menu-text">Book Buddies</li>
-        <li><a class="orange" href="index.html">Home</a></li>
-        <li><a class="orange" href="index.html#about">About</a></li>
-        <li><a class="orange" href="bookclubs.html" target="_blank">Book Clubs</a></li>
+        <li><a class="orange" href="/index">Home</a></li>
+        <li><a class="orange" href="/index#about">About</a></li>
+        <li><a class="orange" href="/bookclubs" target="_blank">Book Clubs</a></li>
       </ul>
     </div>
 
@@ -181,6 +181,20 @@
     <script src="assets/js/vendor/foundation.js"></script>
     <script>
       $(document).foundation();
+
+      /* ----- CARD PROFILE STATS ------- */
+
+// more click
+$('.card-profile-stats-more-link').click(function(e){
+  e.preventDefault();
+  if ( $(".card-profile-stats-more-content").is(':hidden') ) {
+    $('.card-profile-stats-more-link').find('i').removeClass('fa-angle-down').addClass('fa-angle-up');
+  } else {
+    $('.card-profile-stats-more-link').find('i').removeClass('fa-angle-up').addClass('fa-angle-down');
+  }
+  $(this).next('.card-profile-stats-more-content').slideToggle();
+});
+/* ----- CARD PROFILE STATS ------- */
     </script>
 </body>
 
