@@ -4,12 +4,12 @@
     <p class="lead">With many genres to choose from, select the club that will share your love for books.</p>
   </div>
 </div>
-<!--Side Profile Bar -->
 
+<!--Side Profile Bar -->
 <div class="grid-x grid-margin-x">
-  <div class="small-1 cell"></div>
-  <div class="small-2 cell">
-    <br>
+ <div class="small-1 cell"></div>   
+  <div class="small-4 cell">
+      <br>
           <div class="card-profile">
                 {{!-- {{#each User}} --}}
             <div class="card-profile-stats-intro">
@@ -54,7 +54,6 @@
             {{/each}}
           </div>
           <!-- /.card-profile-stats -->
-  </div>
 
   <!-- Club Flip Cards -->
         <hr>
@@ -103,29 +102,22 @@
   <div class="grid-x" id="newClub">
     <div class="cell">
       <div style="background-color:rgba(0,0,0,0.7); min-height:100%; padding:32px; width:100%;">
-        <form class="create-update-form" action="/" method="POST">
         <h3>Can't Find Your Perfect Club?</h3>
         <h4>Become the ultimate <span class="orange"> Book Buddy </span> and create a new Book Club!</h4>
-        <label>Club Name: 
-                <input type="text" id="clubName" placeholder="Name">
+        <label>Club Name
+                <input type="text" placeholder="Name">
               </label>
-        <label>Book Genres:
-                <input type="text" id="genre" placeholder="Romance?">
+        <label>Book Genres
+                <input type="text" placeholder="Romance">
+              </label> 
+        <label>Meeting Location
+                <input type="text" placeholder="Chapel Hill, NC">
               </label>
-        <label>Meeting Location:
-                <input type="text" id="location" placeholder="Chapel Hill, NC">
-              </label>
-        <label> Description:
-                <textarea id="description" placeholder="Make it good...this is your selling point"></textarea>
-              </label>
-        <label>First Book:
-                <input type="text" id="nextBook" placeholder="What would you like to read first?">
-              </label>
-        <label>Book Club Backgroud Image:
-                <input type="text" id="location" placeholder="Please submit an image URL. Image uploading is coming soon!">
+        <label>
+                Description
+                <textarea placeholder="Make it good...this is your selling point"></textarea>
               </label>
         <input type="submit" class="orange-bg button expanded" value="Submit">
-        </form>
       </div>
     </div>
   </div>
@@ -133,13 +125,8 @@
 </div>
 </div>
 
-<!-- Footer -->
-<div class="footer">
-    <div class="info">
-  <div class="row">
-  <div class="large-12 columns">
+<div class="cell shrink footer">
   &copy; MONARCHY Coding 2017
   <br>
   <a class="orange" href="https://github.com/mderoberts/book-buddies" target="_blank">Github</a> </p>
 </div>
-<!-- Footer -->
