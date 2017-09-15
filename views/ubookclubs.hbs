@@ -10,122 +10,121 @@
   <div class="small-1 cell"></div>
   <div class="small-2 cell">
     <br>
-          <div class="card-profile">
-                {{!-- {{#each User}} --}}
-            <div class="card-profile-stats-intro">
-              <img class="card-profile-stats-intro-pic" src="{{this.photo}}" alt="profile-image">
-              <div class="card-profile-stats-intro-content">
-            
-                <h3>{{this.firstName}} {{this.lastName}}</h3>
-                <p> {{this.location}} </p>
-                {{!-- {{/each}} --}}
-              </div>
-              <!-- /.card-profile-stats-intro-content -->
-            </div>
-            <!-- /.card-profile-stats-intro -->
+    <div class="card-profile">
+      {{!-- {{#each User}} --}}
+      <div class="card-profile-stats-intro">
+        <img class="card-profile-stats-intro-pic" src="{{userData.photo}}" alt="profile-image">
+        <div class="card-profile-stats-intro-content">
 
-            <hr>
+          <h3>{{userData.firstName}} {{userData.lastName}}</h3>
+          <p> {{userData.location}} </p>
+          {{!-- {{/each}} --}}
+        </div>
+        <!-- /.card-profile-stats-intro-content -->
+      </div>
+      <!-- /.card-profile-stats-intro -->
 
-            <div class="card-profile-stats-container">
-              <div class="card-profile-stats-statistic">
-                {{!-- {{#each User}} --}}
-<!-- Not sure what to place for club associations data field-->
-               <span class="stat">{{this.favoriteBooks}}</span>
-                <p class="orange">Favorite Books</p>
-                {{!-- {{/each}} --}}
-              </div>
-              <!-- /.card-profile-stats-statistic -->
-             <!-- <div class="card-profile-stats-statistic">
+      <hr>
+
+      <div class="card-profile-stats-container">
+        <div class="card-profile-stats-statistic">
+          <span class="stat">{{userData.favoriteBooks}}</span>
+          <p class="orange">Favorite Books</p>
+        </div>
+        <!-- /.card-profile-stats-statistic -->
+        <!-- <div class="card-profile-stats-statistic">
                 <span class="stat">125</span>
                 <p class="orange">Buddies</p>
               </div> -->
-              <!-- /.card-profile-stats-statistic -->
-            </div>
-            <!-- /.card-profile-stats-container -->
+        <!-- /.card-profile-stats-statistic -->
+      </div>
+      <!-- /.card-profile-stats-container -->
 
-            <div class="card-profile-stats-more">
-              <p class="card-profile-stats-more-link"><a href="#"><i class="fa fa-angle-down" aria-hidden="true"></i></a></p>
-              <div class="card-profile-stats-more-content">
-                <p> {{this.bio}}</p>
-              </div>
-              <!-- /.card-profile-stats-more-content -->
-            </div>
-            <!-- /.card-profile-stats-more -->
-            {{/each}}
-          </div>
-          <!-- /.card-profile-stats -->
+      <div class="card-profile-stats-more">
+        <p class="card-profile-stats-more-link"><a href="#"><i class="fa fa-angle-down" aria-hidden="true"></i></a></p>
+        <div class="card-profile-stats-more-content">
+          <p> {{userData.bio}}</p>
+        </div>
+        <!-- /.card-profile-stats-more-content -->
+      </div>
+      <!-- /.card-profile-stats-more -->
+    </div>
+    <!-- /.card-profile-stats -->
   </div>
 
   <!-- Club Flip Cards -->
-        <hr>
-        <div class="row small-up-1 medium-up-2 large-up-3">
-          <div class="column">
-            <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
-              {{#each Club}}
-              <div class="flip-card-inner">
-                <div class="flip-card-inner-front">
-      
-                  <span>{{this.clubName}}</span>
+  <hr>
+  <div class="row small-up-1 medium-up-2 large-up-2">
+    {{#each clubs}}
+    <div class="column">
+      <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
+        <div class="flip-card-inner">
+          <div class="flip-card-inner-front">
 
-                </div>
-                <div class="flip-card-inner-back">
-                  <h3 class="flip-card-inner-back-title">{{this.clubName}}</h3>
-                  <p class="flip-card-inner-back-text">Moderator: {{this.moderator}}</p>
-                  <p class="flip-card-inner-back-text">Location: {{this.location}}</p>
-                  <p class="flip-card-inner-back-text">Genre: {{this.genre}}</p>
-                  <p class="flip-card-inner-back-text">Description: {{this.description}}</p>
-                  <p class="flip-card-inner-back-text">Next Book: {{this.nextBook}}</p>
-                  <a href="/club" target="_blank" class="button orange-bg">Join Now</a>
-      
-                </div>
-              </div>
-              {{/each}}
-            </div>
+            <span>{{this.clubName}}</span>
+
+          </div>
+          <div class="flip-card-inner-back">
+            <h3 class="flip-card-inner-back-title">{{this.clubName}}</h3>
+            <p class="flip-card-inner-back-text">Moderator: {{this.moderator}}</p>
+            <p class="flip-card-inner-back-text">Location: {{this.location}}</p>
+            <p class="flip-card-inner-back-text">Genre: {{this.genre}}</p>
+            <p class="flip-card-inner-back-text">Description: {{this.description}}</p>
+            <p class="flip-card-inner-back-text">Next Book: {{this.nextBook}}</p>
+
+            <form method="POST" action="/join/{{this.id}}/{{userData.id}}?_method=PUT">
+              <button type="submit" class="orange-bg button large">Join</button>
+            </form>
+
           </div>
         </div>
- <!-- Club Flip Cards -->
+      </div>
+    </div>
+    {{/each}}
+    <!-- Club Flip Cards -->
 
-          <hr>
+    <hr>
 
-  <!--Load More Button -->
-          <div class="grid-x" id="loadMore">
-            <div class="cell">
-              <div style="min-height:100%; padding-left:15px; padding-right: 15px; width:100%;">
-                <a class="orange button hollow expanded">Load More</a>
-              </div>
-            </div>
-          </div>
-  <!--Load More Button -->
+    <!--Load More Button -->
+    <div class="grid-x" id="loadMore">
+      <div class="cell">
+        <div style="min-height:100%; padding-left:15px; padding-right: 15px; width:100%;">
+          <a class="orange button hollow expanded">Load More</a>
+        </div>
+      </div>
+    </div>
+    <!--Load More Button -->
 
-  <hr>
+    <hr>
 
-  <!--New Club Form -->
-  <div class="grid-x" id="newClub">
-    <div class="cell">
-      <div style="background-color:rgba(0,0,0,0.7); min-height:100%; padding:32px; width:100%;">
-        <form class="create-update-form" action="/" method="POST">
-        <h3>Can't Find Your Perfect Club?</h3>
-        <h4>Become the ultimate <span class="orange"> Book Buddy </span> and create a new Book Club!</h4>
-        <label>Club Name: 
+    <!--New Club Form -->
+    <div class="grid-x" id="newClub">
+      <div class="cell">
+        <div style="background-color:rgba(0,0,0,0.7); min-height:100%; padding:32px; width:100%;">
+          <form class="create-update-form" action="/" method="POST">
+            <h3>Can't Find Your Perfect Club?</h3>
+            <h4>Become the ultimate <span class="orange"> Book Buddy </span> and create a new Book Club!</h4>
+            <label>Club Name: 
                 <input type="text" id="clubName" placeholder="Name">
               </label>
-        <label>Book Genres:
+            <label>Book Genres:
                 <input type="text" id="genre" placeholder="Romance?">
               </label>
-        <label>Meeting Location:
+            <label>Meeting Location:
                 <input type="text" id="location" placeholder="Chapel Hill, NC">
               </label>
-        <label> Description:
+            <label> Description:
                 <textarea id="description" placeholder="Make it good...this is your selling point"></textarea>
               </label>
-        <label>First Book:
+            <label>First Book:
                 <input type="text" id="nextBook" placeholder="What would you like to read first?">
               </label>
-        <label>Book Club Backgroud Image:
+            <label>Book Club Backgroud Image:
                 <input type="text" id="location" placeholder="Please submit an image URL. Image uploading is coming soon!">
               </label>
-        <input type="submit" class="orange-bg button expanded" value="Submit">
-        </form>
+            <input type="submit" class="orange-bg button expanded" value="Submit">
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -135,11 +134,11 @@
 
 <!-- Footer -->
 <div class="footer">
-    <div class="info">
-  <div class="row">
-  <div class="large-12 columns">
-  &copy; MONARCHY Coding 2017
-  <br>
-  <a class="orange" href="https://github.com/mderoberts/book-buddies" target="_blank">Github</a> </p>
-</div>
-<!-- Footer -->
+  <div class="info">
+    <div class="row">
+      <div class="large-12 columns">
+        &copy; MONARCHY Coding 2017
+        <br>
+        <a class="orange" href="https://github.com/mderoberts/book-buddies" target="_blank">Github</a> </p>
+      </div>
+      <!-- Footer -->

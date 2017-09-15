@@ -1,4 +1,4 @@
-//var authController = require('../controllers/authcontroller.js');
+var db = require('../models');
 
 module.exports = function (app, passport) {
   // app.get('/signup', authController.signup);
@@ -41,7 +41,17 @@ module.exports = function (app, passport) {
     res.render("user", userData);
   });
 
-  // app.get('/ubookclubs', isLoggedIn, authController.ubookclubs);
+  app.get('/ubookclubs', isLoggedIn, function (req, res) {
+    db.Club.findAll()
+    .then(function(dbClubs) {
+      var hbObject = {
+        clubs: dbClubs,
+        userData: req.user
+      }
+      console.log("hbObject:", hbObject);
+      res.render("ubookclubs", hbObject);
+    });
+  });
 
   app.get('/logout', function (req, res) {
     req.session.destroy(function (err) {
