@@ -53,7 +53,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         photo: {
             type: DataTypes.STRING,
-            allowNull: false,
+            defaultValue: "http://whytoread.com/wp-content/uploads/2015/05/Books-That-Will-Make-You-Proud-And-Satisfied-To-Have-Read.jpg"
         }
 
     });
