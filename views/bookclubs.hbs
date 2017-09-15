@@ -50,97 +50,24 @@
             <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
               <div class="flip-card-inner">
                 <div class="flip-card-inner-front">
-                  <span>"Bro" Book Club</span>
+                  {{#each Club}}
+                  <span>{{this.clubName}}</span>
                 </div>
                 <div class="flip-card-inner-back">
-                  <h3 class="flip-card-inner-back-title">Book Club Name</h3>
-                  <p class="flip-card-inner-back-text">Descripton:</p>
-                  <p class="flip-card-inner-back-text">Location:</p>
+                  <h3 class="flip-card-inner-back-title">{{this.clubName}}</h3>
+                  <p class="flip-card-inner-back-text">Moderator: {{this.moderator}}</p>
+                  <p class="flip-card-inner-back-text">Location: {{this.location}}</p>
+                  <p class="flip-card-inner-back-text">Genre: {{this.genre}}</p>
+                  <p class="flip-card-inner-back-text">Description: {{this.description}}</p>
+                  <p class="flip-card-inner-back-text">Next Book: {{this.nextBook}}</p>
                   <a href="/club" target="_blank" class="button orange-bg">Join Now</a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="column">
-            <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
-              <div class="flip-card-inner">
-                <div class="flip-card-inner-front">
-                  <span>Book Club</span>
-                </div>
-                <div class="flip-card-inner-back">
-                  <h3 class="flip-card-inner-back-title">Book Club Name</h3>
-                  <p class="flip-card-inner-back-text">Descripton:</p>
-                  <p class="flip-card-inner-back-text">Location:</p>
-                  <a href="#" class="button orange-bg">Join Now</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="column">
-            <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
-              <div class="flip-card-inner">
-                <div class="flip-card-inner-front">
-                  <span>Book Club</span>
-                </div>
-                <div class="flip-card-inner-back">
-                  <h3 class="flip-card-inner-back-title">Book Club Name</h3>
-                  <p class="flip-card-inner-back-text">Descripton:</p>
-                  <p class="flip-card-inner-back-text">Location:</p>
-                  <a href="#" class="button orange-bg">Join Now</a>
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div class="column">
-            <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
-              <div class="flip-card-inner">
-                <div class="flip-card-inner-front">
-                  <span>Book Club</span>
-                </div>
-                <div class="flip-card-inner-back">
-                  <h3 class="flip-card-inner-back-title">Book Club Name</h3>
-                  <p class="flip-card-inner-back-text">Descripton:</p>
-                  <p class="flip-card-inner-back-text">Location:</p>
-                  <a href="#" class="button orange-bg">Join Now</a>
-                </div>
-              </div>
-            </div>
+        </div>
 
 
-          </div>
-          <div class="column">
-            <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
-              <div class="flip-card-inner">
-                <div class="flip-card-inner-front">
-                  <span>Book Club</span>
-                </div>
-                <div class="flip-card-inner-back">
-                  <h3 class="flip-card-inner-back-title">Book Club Name</h3>
-                  <p class="flip-card-inner-back-text">Descripton:</p>
-                  <p class="flip-card-inner-back-text">Location:</p>
-                  <a href="#" class="button orange-bg">Join Now</a>
-                </div>
-              </div>
-            </div>
-
-
-          </div>
-          <div class="column">
-            <div class="flip-card card" ontouchstart="this.classList.toggle('hover');">
-              <div class="flip-card-inner">
-                <div class="flip-card-inner-front">
-                  <span>Book Club</span>
-                </div>
-                <div class="flip-card-inner-back">
-                  <h3 class="flip-card-inner-back-title">Book Club Name</h3>
-                  <p class="flip-card-inner-back-text">Descripton:</p>
-                  <p class="flip-card-inner-back-text">Location:</p>
-                  <a href="#" class="button orange-bg">Join Now</a>
-                </div>
-              </div>
-            </div>
-          </div>
           <hr>
 
           <div class="grid-x" id="loadMore">
@@ -154,9 +81,13 @@
 
           <hr>
 
-
-    <div class="cell shrink footer">
-      &copy; MONARCHY Coding 2017
-      <br>
-      <a class="orange" href="https://github.com/mderoberts/book-buddies" target="_blank">Github</a> </p>
-    </div>
+      <!-- Footer -->
+      <div class="footer">
+          <div class="info">
+        <div class="row">
+        <div class="large-12 columns">
+        &copy; MONARCHY Coding 2017
+        <br>
+        <a class="orange" href="https://github.com/mderoberts/book-buddies" target="_blank">Github</a> </p>
+      </div>
+      <!-- Footer -->
