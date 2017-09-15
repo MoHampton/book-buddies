@@ -60,7 +60,7 @@ module.exports = function(sequelize, DataTypes) {
 
     Club.associate = function(models) {
         Club.hasMany(models.Association);
-        Club.hasMany(models.Schedule);
+        Club.hasOne(models.Schedule);
     };
 
     return Club;
