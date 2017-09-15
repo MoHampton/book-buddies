@@ -1,6 +1,6 @@
 //var authController = require('../controllers/authcontroller.js');
 
-module.exports = function (app, passport, myPassportJS) {
+module.exports = function (app, passport) {
   // app.get('/signup', authController.signup);
 
   // app.get('/signin', authController.signin);
@@ -38,7 +38,7 @@ module.exports = function (app, passport, myPassportJS) {
     // Use has joined clubs? show user's clubs w "Your clubs" text, and recommended clubs.)
     console.log(req.user);
     var userData = req.user
-    res.render("user", userData); // send user id--or all data--in... in URL here?
+    res.render("user", userData);
   });
 
   // app.get('/ubookclubs', isLoggedIn, authController.ubookclubs);
