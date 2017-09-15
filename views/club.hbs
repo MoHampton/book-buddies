@@ -50,8 +50,6 @@
             <p class="lead">Decription: {{clubData.description}}</p>
             <p class="lead">Location: {{clubData.location}}</p>
             <p>
-              {{!-- for future: figure out how to, in html-routes, pass along req.user as a second object to handlbars,
-              then include it as a second param in this form action --}}
               <form method="POST" action="/join/{{clubData.id}}/{{userData.id}}?_method=PUT">
                 <button type="submit" class="orange-bg button large">Join</button>
               </form>
