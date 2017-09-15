@@ -13,4 +13,8 @@ module.exports = function(app) {
     console.log("req.params:", req.params);
     db.Association.create(req.params);
   });
+
+  app.post("/join/:ClubId", function(req, res) {
+    res.send("You must log in first");
+  });
 }
