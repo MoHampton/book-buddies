@@ -46,7 +46,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         photo: {
             type: DataTypes.STRING,
-            allowNull: true,
+            defaultValue: "https://i.pinimg.com/236x/15/73/fc/1573fc7afb3f5e3f0c0c70803fea230e--book-art-collage-book.jpg”"
         }
 
     });
