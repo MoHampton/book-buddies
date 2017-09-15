@@ -44,8 +44,8 @@ app.engine("hbs", exphbs({
 app.set("view engine", ".hbs");
 
 // Syncing sequelize models and then starting Express app
-// TODO: remove "force: true" before deploying
-db.sequelize.sync({force: true}).then(function() {
+// TODO: remove {force: true} before deploying
+db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
