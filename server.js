@@ -24,34 +24,28 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
 // load passport strategies
-require('./config/passport/passport.js')(passport, db.User);
+var myPassportJS = require('./config/passport/passport.js')(passport, db.User);
 
-// TODO: reinstate these after they're built out and are actually exporting
 // Routes
-// require("./routes/api-routes")(app);
+require("./routes/api-routes")(app);
 require("./routes/html-routes")(app);
 
-var authRoute = require('./routes/auth-routes.js')(app, passport);
-
-// TODO: remove this temporary testing route
-/*  res.send('Welcome!');
-});*/
+var authRoute = require('./routes/auth-routes.js')(app, passport, myPassportJS);
 
 app.use(express.static('./public/'));
 
-// set up Firebase tools
-// var admin = require("firebase-admin");
-
-// var serviceAccount = require("./config/book-buddies-b7e5a-firebase-adminsdk-qya3g-ac91129f5a.json");
-
-// admin.initializeApp({
-//   credential: admin.credential.cert(serviceAccount),
-//   databaseURL: "https://book-buddies-b7e5a.firebaseio.com"
-// });
+// Set Handlebars
+var exphbs = require("express-handlebars");
+app.set('views', './views')
+app.engine("hbs", exphbs({
+  defaultLayout: "main",
+  extname: '.hbs'
+}));
+app.set("view engine", ".hbs");
 
 // Syncing sequelize models and then starting Express app
 // TODO: remove "force: true" before deploying
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
