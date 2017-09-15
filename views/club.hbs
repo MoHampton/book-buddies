@@ -45,11 +45,17 @@
       <div class="callout large">
         <div class="row column text-center">
           <div class="info">
-            <h1>"Bro" Book Club</h1>
-            <p class="lead">Genres: Military/SCI-FI</p>
-            <p class="lead">Decription: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
-            <p class="lead">Location: Chapel Hill, NC</p>
-            <a href="#" class="orange-bg button large">Join</a>
+            <h1>{{clubData.clubName}}</h1>
+            <p class="lead">Genre: {{clubData.genre}}</p>
+            <p class="lead">Decription: {{clubData.description}}</p>
+            <p class="lead">Location: {{clubData.location}}</p>
+            <p>
+              {{!-- for future: figure out how to, in html-routes, pass along req.user as a second object to handlbars,
+              then include it as a second param in this form action --}}
+              <form method="POST" action="/join/{{clubData.id}}/{{userData.id}}?_method=PUT">
+                <button type="submit" class="orange-bg button large">Join</button>
+              </form>
+            </p>
           </div>
         </div>
       </div>
