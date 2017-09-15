@@ -11,14 +11,12 @@
   <div class="small-2 cell">
     <br>
     <div class="card-profile">
-      {{!-- {{#each User}} --}}
       <div class="card-profile-stats-intro">
         <img class="card-profile-stats-intro-pic" src="{{userData.photo}}" alt="profile-image">
         <div class="card-profile-stats-intro-content">
 
           <h3>{{userData.firstName}} {{userData.lastName}}</h3>
           <p> {{userData.location}} </p>
-          {{!-- {{/each}} --}}
         </div>
         <!-- /.card-profile-stats-intro-content -->
       </div>
@@ -28,8 +26,8 @@
 
       <div class="card-profile-stats-container">
         <div class="card-profile-stats-statistic">
-          <span class="stat">{{userData.favoriteBooks}}</span>
-          <p class="orange">Favorite Books</p>
+          <span class="stat">{{userData.favoriteBook}}</span>
+          <p class="orange">Favorite Book</p>
         </div>
         <!-- /.card-profile-stats-statistic -->
         <!-- <div class="card-profile-stats-statistic">
@@ -53,7 +51,6 @@
   </div>
 
   <!-- Club Flip Cards -->
-  <hr>
   <div class="row small-up-1 medium-up-2 large-up-2">
     {{#each clubs}}
     <div class="column">
@@ -127,10 +124,12 @@
         </div>
       </div>
     </div>
+    {{!-- / new club form --}}
   </div>
+  {{!-- /row --}}
 </div>
-</div>
-</div>
+{{!-- grid --}}
+
 
 <!-- Footer -->
 <div class="footer">
@@ -141,4 +140,7 @@
         <br>
         <a class="orange" href="https://github.com/mderoberts/book-buddies" target="_blank">Github</a> </p>
       </div>
-      <!-- Footer -->
+    </div>
+  </div>
+</div>
+<!-- Footer -->
