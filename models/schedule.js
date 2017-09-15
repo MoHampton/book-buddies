@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var Schedule = sequelize.define("User", {
+    var Schedule = sequelize.define("Schedule", {
         meetingDay: {
             type: DataTypes.STRING,
             allowNull: false
