@@ -4,6 +4,7 @@ module.exports = function(app) {
   // on get '/' render contents of index.html, aka splash screen
   app.get('/', function(req, res) {
     // no sequelize stuff needed?
+    console.log(req.user)
     res.render("index");
   })
 

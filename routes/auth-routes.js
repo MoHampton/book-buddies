@@ -1,6 +1,6 @@
-var authController = require('../controllers/authcontroller.js');
+//var authController = require('../controllers/authcontroller.js');
 
-module.exports = function (app, passport) {
+module.exports = function (app, passport, myPassportJS) {
   // app.get('/signup', authController.signup);
 
   // app.get('/signin', authController.signin);
@@ -17,11 +17,11 @@ module.exports = function (app, passport) {
   // and then we'll route it to an auth API
 
   // new user signup:
-  app.post('/signup', passport.authenticate('local-signup', {
-    successRedirect: '/user',
-    failureRedirect: '/signup'
-  }
-  ));
+  app.post('/signup', 
+    passport.authenticate('local-signup', {
+      successRedirect: '/user',
+      failureRedirect: '/signup'
+    }));
   // Thoughts: how do I use authentication state to load sub-portions of pages via routing?
 
   // returning user signin:
@@ -31,11 +31,23 @@ module.exports = function (app, passport) {
   }
   ));
 
-  app.get('/user', isLoggedIn, authController.user);
+  app.get('/user', isLoggedIn, function (req, res) {
+    // replace w real res.render, providing content currently in bookclubs.html,
+    // preferably w differentiation based on user data
+    // (no clubs joined? show "Select a club" text and list of all clubs.
+    // Use has joined clubs? show user's clubs w "Your clubs" text, and recommended clubs.)
+    console.log(req.user);
+    var userData = req.user
+    res.render("user");
+  });
 
   // app.get('/ubookclubs', isLoggedIn, authController.ubookclubs);
 
-  app.get('/logout', authController.logout);
+  app.get('/logout', function (req, res) {
+    req.session.destroy(function (err) {
+      res.redirect('/');
+    })
+  });
 
   function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {

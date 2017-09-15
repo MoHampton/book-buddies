@@ -24,13 +24,13 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
 // load passport strategies
-require('./config/passport/passport.js')(passport, db.User);
+var myPassportJS = require('./config/passport/passport.js')(passport, db.User);
 
 // Routes
 require("./routes/api-routes")(app);
 require("./routes/html-routes")(app);
 
-var authRoute = require('./routes/auth-routes.js')(app, passport);
+var authRoute = require('./routes/auth-routes.js')(app, passport, myPassportJS);
 
 app.use(express.static('./public/'));
 
