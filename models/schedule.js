@@ -21,8 +21,13 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false
         }
     });
+    
     Schedule.associate = function(models) {
-        Schedule.hasMany(models.Club)
-    }
+        Schedule.belongsTo(models.Club, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
     return Schedule;
 }; 
