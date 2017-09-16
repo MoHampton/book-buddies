@@ -1,403 +1,402 @@
-  <!-- Navigation Mobile Responsive-->
-  <div class="title-bar" data-responsive-toggle="book-menu" data-hide-for="medium">
-    <button class="menu-icon" type="button" data-toggle="book-menu"></button>
-    <div class="orange title-bar-title">Book Buddies</div>
+<!-- Navigation Mobile Responsive-->
+<div class="title-bar" data-responsive-toggle="book-menu" data-hide-for="medium">
+  <button class="menu-icon" type="button" data-toggle="book-menu"></button>
+  <div class="orange title-bar-title">Book Buddies</div>
+</div>
+<div class="top-bar" id="book-menu">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="orange menu-text">Book Buddies</li>
+      <li><a class="orange" href="/">Home</a></li>
+      <li><a class="orange" href="/#about">About</a></li>
+      <li><a class="orange" href="/bookclubs">Book Clubs</a></li>
+    </ul>
   </div>
-  <div class="top-bar" id="book-menu">
-    <div class="top-bar-left">
-      <ul class="dropdown menu" data-dropdown-menu>
-        <li class="orange menu-text">Book Buddies</li>
-        <li><a class="orange" href="index.html">Home</a></li>
-        <li><a class="orange" href="index.html#about">About</a></li>
-        <li><a class="orange" href="bookclubs.html" target="_blank">Book Clubs</a></li>
-      </ul>
-    </div>
+  <div class="top-bar-right">
+    <ul class="menu">
 
-    <div class="top-bar-right">
-      <ul class="menu">
-        <li><a class=href="#">My Account</a></li>
-        <li><a class="orange-bg button" data-open="profileModal">Login</a></li>
-        <div class="reveal" id="profileModal" data-reveal>
-          <div class="login-box">
-            <div class="row collapse expanded">
-              <div class="small-12 medium-6 column small-order-2 medium-order-1">
-                <div class="login-box-form-section">
+      {{#if userData}}
+      <li><a class="orange" href="/user">My Account</a></li>
+      {{else}}
+      <li><a class="orange-bg button" data-open="profileModal">Login</a></li>
+      <div class="reveal" id="profileModal" data-reveal>
+        <div class="login-box">
+          <div class="row collapse expanded">
+            <div class="small-12 medium-6 column small-order-2 medium-order-1">
+              <div class="login-box-form-section">
+                <form method="POST" action="/signin" id="signin-form">
                   <h1 class="login-box-title">Welcome Back, <a class="orange"> Buddy!</a></h1>
-                  <input class="login-box-input" type="text" name="username" placeholder="Username" />
+                  <input class="login-box-input" type="email" name="email" placeholder="Email" />
                   <input class="login-box-input" type="password" name="password" placeholder="Password" />
-                  <input class=" orange login-box-submit-button" type="submit" name="signup_submit" value="Log In" />
-                </div>
-                <div class="small-12 medium-6 column small-order-1 medium-order-2 login-box-social-section">
-                  <div class="login-box-social-section-inner">
-                    <span class="login-box-social-headline">Sign in with<br />your social network</span>
-                    <a class="login-box-social-button-facebook">Log in with Facebook</a>
-                    <a class="login-box-social-button-twitter">Log in with Twitter</a>
-                    <a class="login-box-social-button-google">Log in with Google+</a>
-                  </div>
-                </div>
+                  <input class=" orange login-box-submit-button" type="submit" name="signin_submit" value="Log In" />
+                </form>
               </div>
             </div>
-      </ul>
-      </div>
-      </div>
-      <!-- /Navigation -->
-
-      <div class="callout large">
-        <div class="row column text-center">
-          <div class="info">
-            <h1>{{clubData.clubName}}</h1>
-            <p class="lead">Genre: {{clubData.genre}}</p>
-            <p class="lead">Decription: {{clubData.description}}</p>
-            <p class="lead">Location: {{clubData.location}}</p>
-            <p>
-              <form method="POST" action="/join/{{clubData.id}}/{{userData.id}}?_method=PUT">
-                <button type="submit" class="orange-bg button large">Join</button>
-              </form>
-            </p>
           </div>
         </div>
       </div>
+      {{/if}}
+    </ul>
+  </div>
+</div>
+<!-- /Navigation -->
+
+<div class="callout large">
+  <div class="row column text-center">
+    <div class="info">
+      <h1>{{clubData.clubName}}</h1>
+      <p class="lead">Genre: {{clubData.genre}}</p>
+      <p class="lead">Decription: {{clubData.description}}</p>
+      <p class="lead">Location: {{clubData.location}}</p>
+      <p>
+        <form method="POST" action="/join/{{clubData.id}}/{{userData.id}}?_method=PUT">
+          <button type="submit" class="orange-bg button large">Join</button>
+        </form>
+      </p>
+    </div>
+  </div>
+</div>
 
 
-      <div class="row column">
-        <ul class="vertical medium-horizontal menu expanded text-center">
-          <li>
-            <a href="#buddies">
-              <div class="stat">28</div><span class="orange">Buddies</span></a>
-          </li>
-          <li>
-            <a href="#events">
-              <div class="stat">43</div><span>Events</span></a>
-          </li>
-          <li>
-            <a href="#disc">
-              <div class="stat">95</div><span>Discussions</span></a>
-          </li>
-          <li>
-            <a href="#poll">
-              <div class="stat">59</div><span>Polls</span></a>
-          </li>
-        </ul>
-      </div>
+<div class="row column">
+  <ul class="vertical medium-horizontal menu expanded text-center">
+    <li>
+      <a href="#buddies">
+        <div class="stat">28</div><span class="orange">Buddies</span></a>
+    </li>
+    <li>
+      <a href="#events">
+        <div class="stat">43</div><span>Events</span></a>
+    </li>
+    <li>
+      <a href="#disc">
+        <div class="stat">95</div><span>Discussions</span></a>
+    </li>
+    <li>
+      <a href="#poll">
+        <div class="stat">59</div><span>Polls</span></a>
+    </li>
+  </ul>
+</div>
 
-      <hr>
+<hr>
 
-      <div class="column row">
-        <hr>
-        <ul class="tabs" data-tabs id="example-tabs">
-          <li class="tabs-title is-active"><a href="#panel1" aria-selected="true" id="buddies">Buddies</a></li>
-          <li class="tabs-title"><a href="#panel2" id="events">Events</a></li>
-          <li class="tabs-title"><a href="#panel3" id="disc">Discussion</a></li>
-        </ul>
-        <div class="tabs-content" data-tabs-content="example-tabs">
-          <div class="tabs-panel is-active" id="panel1">
-            <h4 class="orange">Buddies</h4>
+<div class="column row">
+  <hr>
+  <ul class="tabs" data-tabs id="example-tabs">
+    <li class="tabs-title is-active"><a href="#panel1" aria-selected="true" id="buddies">Buddies</a></li>
+    <li class="tabs-title"><a href="#panel2" id="events">Events</a></li>
+    <li class="tabs-title"><a href="#panel3" id="disc">Discussion</a></li>
+  </ul>
+  <div class="tabs-content" data-tabs-content="example-tabs">
+    <div class="tabs-panel is-active" id="panel1">
+      <h4 class="orange">Buddies</h4>
 
 
-            <!-- First Profile Card -->
-            <div class="row small-up-2 medium-up-3">
-              <div class="column">
-                <div class="card-profile-stats">
-                  <div class="card-profile-stats-intro">
-                    <img class="card-profile-stats-intro-pic" src="https://pbs.twimg.com/profile_images/732634911761260544/OxHbNdTF.jpg" alt="profile-image"
-                    />
-                    <div class="card-profile-stats-intro-content">
-                      <h3>Joe Smith</h3>
-                      <p> Chapel Hill, NC </p>
-                    </div>
-                    <!-- /.card-profile-stats-intro-content -->
-                  </div>
-                  <!-- /.card-profile-stats-intro -->
-
-                  <hr>
-
-                  <div class="card-profile-stats-container">
-                    <div class="card-profile-stats-statistic">
-                      <span class="stat">5</span>
-                      <p class="orange">Clubs</p>
-                    </div>
-                    <!-- /.card-profile-stats-statistic -->
-                    <div class="card-profile-stats-statistic">
-                      <span class="stat">125</span>
-                      <p class="orange">Buddies</p>
-                    </div>
-                    <!-- /.card-profile-stats-statistic -->
-                  </div>
-                  <!-- /.card-profile-stats-container -->
-
-                  <div class="card-profile-stats-more">
-                    <p class="card-profile-stats-more-link"><a href="#"><i class="fa fa-angle-down" aria-hidden="true"></i></a></p>
-                    <div class="card-profile-stats-more-content">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem libero fugit, pariatur maxime! Optio enim, deserunt
-                        quia molestiae fugiat delectus, dolore et esse nostrum, quod autem necessitatibus fugit soluta repellendus.
-                      </p>
-                    </div>
-                    <!-- /.card-profile-stats-more-content -->
-                  </div>
-                  <!-- /.card-profile-stats-more -->
-                </div>
-                <!-- /.card-profile-stats -->
+      <!-- First Profile Card -->
+      <div class="row small-up-2 medium-up-3">
+        <div class="column">
+          <div class="card-profile-stats">
+            <div class="card-profile-stats-intro">
+              <img class="card-profile-stats-intro-pic" src="https://pbs.twimg.com/profile_images/732634911761260544/OxHbNdTF.jpg" alt="profile-image"
+              />
+              <div class="card-profile-stats-intro-content">
+                <h3>Joe Smith</h3>
+                <p> Chapel Hill, NC </p>
               </div>
-              <!-- /.column -->
-              <!-- First Profile Card -->
-
-              <!-- Second Profile Card -->
-              <div class="column">
-                <div class="card-profile-stats">
-                  <div class="card-profile-stats-intro">
-                    <img class="card-profile-stats-intro-pic" src="assets/img/bio2.jpg" alt="profile-image" />
-                    <div class="card-profile-stats-intro-content">
-                      <h3>Joe Smith</h3>
-                      <p> Chapel Hill, NC </p>
-                    </div>
-                    <!-- /.card-profile-stats-intro-content -->
-                  </div>
-                  <!-- /.card-profile-stats-intro -->
-
-                  <hr>
-
-                  <div class="card-profile-stats-container">
-                    <div class="card-profile-stats-statistic">
-                      <span class="stat">5</span>
-                      <p class="orange">Clubs</p>
-                    </div>
-                    <!-- /.card-profile-stats-statistic -->
-                    <div class="card-profile-stats-statistic">
-                      <span class="stat">125</span>
-                      <p class="orange">Buddies</p>
-                    </div>
-                    <!-- /.card-profile-stats-statistic -->
-                  </div>
-                  <!-- /.card-profile-stats-container -->
-
-                  <div class="card-profile-stats-more">
-                    <p class="card-profile-stats-more-link"><a href="#"><i class="fa fa-angle-down" aria-hidden="true"></i></a></p>
-                    <div class="card-profile-stats-more-content">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem libero fugit, pariatur maxime! Optio enim, deserunt
-                        quia molestiae fugiat delectus, dolore et esse nostrum, quod autem necessitatibus fugit soluta repellendus.
-                      </p>
-                    </div>
-                    <!-- /.card-profile-stats-more-content -->
-                  </div>
-                  <!-- /.card-profile-stats-more -->
-                </div>
-                <!-- /.card-profile-stats -->
-              </div>
-              <!-- /.column -->
-              <!-- Third Profile Card -->
-              <div class="column">
-                <div class="card-profile-stats">
-                  <div class="card-profile-stats-intro">
-                    <img class="card-profile-stats-intro-pic" src="assets/img/bio3.png" alt="profile-image" />
-                    <div class="card-profile-stats-intro-content">
-                      <h3>Joe Smith</h3>
-                      <p> Chapel Hill, NC </p>
-                    </div>
-                    <!-- /.card-profile-stats-intro-content -->
-                  </div>
-                  <!-- /.card-profile-stats-intro -->
-
-                  <hr>
-
-                  <div class="card-profile-stats-container">
-                    <div class="card-profile-stats-statistic">
-                      <span class="stat">5</span>
-                      <p class="orange">Clubs</p>
-                    </div>
-                    <!-- /.card-profile-stats-statistic -->
-                    <div class="card-profile-stats-statistic">
-                      <span class="stat">125</span>
-                      <p class="orange">Buddies</p>
-                    </div>
-                    <!-- /.card-profile-stats-statistic -->
-                  </div>
-                  <!-- /.card-profile-stats-container -->
-
-                  <div class="card-profile-stats-more">
-                    <p class="card-profile-stats-more-link"><a href="#"><i class="fa fa-angle-down" aria-hidden="true"></i></a></p>
-                    <div class="card-profile-stats-more-content">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem libero fugit, pariatur maxime! Optio enim, deserunt
-                        quia molestiae fugiat delectus, dolore et esse nostrum, quod autem necessitatibus fugit soluta repellendus.
-                      </p>
-                    </div>
-                    <!-- /.card-profile-stats-more-content -->
-                  </div>
-                  <!-- /.card-profile-stats-more -->
-                </div>
-                <!-- /.card-profile-stats -->
-              </div>
-              <!-- /.column -->
+              <!-- /.card-profile-stats-intro-content -->
             </div>
-            <!--/. row small-up-2 medium-up-3-->
-            <!-- Third Profile Card -->
+            <!-- /.card-profile-stats-intro -->
 
-            <label id="poll">
+            <hr>
+
+            <div class="card-profile-stats-container">
+              <div class="card-profile-stats-statistic">
+                <span class="stat">5</span>
+                <p class="orange">Clubs</p>
+              </div>
+              <!-- /.card-profile-stats-statistic -->
+              <div class="card-profile-stats-statistic">
+                <span class="stat">125</span>
+                <p class="orange">Buddies</p>
+              </div>
+              <!-- /.card-profile-stats-statistic -->
+            </div>
+            <!-- /.card-profile-stats-container -->
+
+            <div class="card-profile-stats-more">
+              <p class="card-profile-stats-more-link"><a href="#"><i class="fa fa-angle-down" aria-hidden="true"></i></a></p>
+              <div class="card-profile-stats-more-content">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem libero fugit, pariatur maxime! Optio enim, deserunt
+                  quia molestiae fugiat delectus, dolore et esse nostrum, quod autem necessitatibus fugit soluta repellendus.
+                </p>
+              </div>
+              <!-- /.card-profile-stats-more-content -->
+            </div>
+            <!-- /.card-profile-stats-more -->
+          </div>
+          <!-- /.card-profile-stats -->
+        </div>
+        <!-- /.column -->
+        <!-- First Profile Card -->
+
+        <!-- Second Profile Card -->
+        <div class="column">
+          <div class="card-profile-stats">
+            <div class="card-profile-stats-intro">
+              <img class="card-profile-stats-intro-pic" src="assets/img/bio2.jpg" alt="profile-image" />
+              <div class="card-profile-stats-intro-content">
+                <h3>Joe Smith</h3>
+                <p> Chapel Hill, NC </p>
+              </div>
+              <!-- /.card-profile-stats-intro-content -->
+            </div>
+            <!-- /.card-profile-stats-intro -->
+
+            <hr>
+
+            <div class="card-profile-stats-container">
+              <div class="card-profile-stats-statistic">
+                <span class="stat">5</span>
+                <p class="orange">Clubs</p>
+              </div>
+              <!-- /.card-profile-stats-statistic -->
+              <div class="card-profile-stats-statistic">
+                <span class="stat">125</span>
+                <p class="orange">Buddies</p>
+              </div>
+              <!-- /.card-profile-stats-statistic -->
+            </div>
+            <!-- /.card-profile-stats-container -->
+
+            <div class="card-profile-stats-more">
+              <p class="card-profile-stats-more-link"><a href="#"><i class="fa fa-angle-down" aria-hidden="true"></i></a></p>
+              <div class="card-profile-stats-more-content">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem libero fugit, pariatur maxime! Optio enim, deserunt
+                  quia molestiae fugiat delectus, dolore et esse nostrum, quod autem necessitatibus fugit soluta repellendus.
+                </p>
+              </div>
+              <!-- /.card-profile-stats-more-content -->
+            </div>
+            <!-- /.card-profile-stats-more -->
+          </div>
+          <!-- /.card-profile-stats -->
+        </div>
+        <!-- /.column -->
+        <!-- Third Profile Card -->
+        <div class="column">
+          <div class="card-profile-stats">
+            <div class="card-profile-stats-intro">
+              <img class="card-profile-stats-intro-pic" src="assets/img/bio3.png" alt="profile-image" />
+              <div class="card-profile-stats-intro-content">
+                <h3>Joe Smith</h3>
+                <p> Chapel Hill, NC </p>
+              </div>
+              <!-- /.card-profile-stats-intro-content -->
+            </div>
+            <!-- /.card-profile-stats-intro -->
+
+            <hr>
+
+            <div class="card-profile-stats-container">
+              <div class="card-profile-stats-statistic">
+                <span class="stat">5</span>
+                <p class="orange">Clubs</p>
+              </div>
+              <!-- /.card-profile-stats-statistic -->
+              <div class="card-profile-stats-statistic">
+                <span class="stat">125</span>
+                <p class="orange">Buddies</p>
+              </div>
+              <!-- /.card-profile-stats-statistic -->
+            </div>
+            <!-- /.card-profile-stats-container -->
+
+            <div class="card-profile-stats-more">
+              <p class="card-profile-stats-more-link"><a href="#"><i class="fa fa-angle-down" aria-hidden="true"></i></a></p>
+              <div class="card-profile-stats-more-content">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem libero fugit, pariatur maxime! Optio enim, deserunt
+                  quia molestiae fugiat delectus, dolore et esse nostrum, quod autem necessitatibus fugit soluta repellendus.
+                </p>
+              </div>
+              <!-- /.card-profile-stats-more-content -->
+            </div>
+            <!-- /.card-profile-stats-more -->
+          </div>
+          <!-- /.card-profile-stats -->
+        </div>
+        <!-- /.column -->
+      </div>
+      <!--/. row small-up-2 medium-up-3-->
+      <!-- Third Profile Card -->
+
+      <label id="poll">
             What should we read next?
             <textarea placeholder="Book Title"></textarea>
           </label>
-            <button class="orange-bg button">Submit Review</button>
-          </div>
-          <!-- /.tabs-panel is-active -->
+      <button class="orange-bg button">Submit Review</button>
+    </div>
+    <!-- /.tabs-panel is-active -->
 
-          <div class="tabs-panel" id="panel2">
-            <div class="row">
-              <div class="column">
-                <h2> COMING SOON </h2>
-                <br>
-                <img src="assets/img/calendar.jpg">
-              </div>
-            </div>
+    <div class="tabs-panel" id="panel2">
+      <div class="row">
+        <div class="column">
+          <h2> COMING SOON </h2>
+          <br>
+          <img src="assets/img/calendar.jpg">
+        </div>
+      </div>
+    </div>
+    <!-- /.tabs-panel2 -->
+    <div class="tabs-panel" id="panel3">
+      <div class="grid-frame" id="discussionPlaceholder">
+        <div zf-panel position="left" id="sidebar" class="medium-grid-block collapse medium-3 large-3 vertical">
+          <div class="grid-content collapse shrink hide-for-medium">
+            <a href="" class="secondary button expand" zf-close>Close</a>
           </div>
-          <!-- /.tabs-panel2 -->
-          <div class="tabs-panel" id="panel3">
-            <div class="grid-frame" id="discussionPlaceholder">
-              <div zf-panel position="left" id="sidebar" class="medium-grid-block collapse medium-3 large-3 vertical">
-                <div class="grid-content collapse shrink hide-for-medium">
-                  <a href="" class="secondary button expand" zf-close>Close</a>
-                </div>
-                <div class="grid-content collapse shrink">
-                  <img src="http://placehold.it/400x150&text=Logo">
-                </div>
-                <div class="grid-content">
+          <div class="grid-content collapse shrink">
+            <img src="http://placehold.it/400x150&text=Logo">
+          </div>
+          <div class="grid-content">
 
-                  <section class="block-list">
-                    <header>Rooms</header>
-                    <ul>
-                      <li>
-                        <a href="#">
+            <section class="block-list">
+              <header>Rooms</header>
+              <ul>
+                <li>
+                  <a href="#">
                   Slam Book
                   <span class="block-list-label">7</span>
                 </a>
-                      </li>
-                      <li>
-                        <a href="#">
+                </li>
+                <li>
+                  <a href="#">
                   Foundation Chat
                   <span class="block-list-label">2</span>
                 </a>
-                      </li>
-                      <li>
-                        <a class="success" href="#">
+                </li>
+                <li>
+                  <a class="success" href="#">
                   LolCats
                   <span class="block-list-label">2</span>
                 </a>
-                      </li>
-                    </ul>
-                  </section>
+                </li>
+              </ul>
+            </section>
 
-                  <section class="block-list">
-                    <header>People</header>
-                    <ul>
-                      <li>
-                        <a href="#">
+            <section class="block-list">
+              <header>People</header>
+              <ul>
+                <li>
+                  <a href="#">
                   Glen Coco
                   <span class="block-list-label">2</span>
                 </a>
-                      </li>
-                      <li>
-                        <a class="success" href="#">
+                </li>
+                <li>
+                  <a class="success" href="#">
                   Guy Guyerson
                   <span class="block-list-label">2</span>
                 </a>
-                      </li>
-                    </ul>
-                  </section>
-                </div>
-                <div class="grid-content collapse shrink avatar-section">
-                  <img src="http://placehold.it/50x50"> Regina George
-                </div>
-              </div>
+                </li>
+              </ul>
+            </section>
+          </div>
+          <div class="grid-content collapse shrink avatar-section">
+            <img src="http://placehold.it/50x50"> Regina George
+          </div>
+        </div>
 
-              <div class="grid-block collapse medium-9 large-9 vertical">
-                <div id="header" class="shrink collapse grid-content">
-                  <ul class="menu-bar primary">
-                    <li class="hide-for-medium"><a zf-open="sidebar" href="#">Menu</a></li>
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                  </ul>
-                </div>
-                <div class="grid-block">
-                  <div class="grid-block small-12 medium-9 vertical">
-                    <div class="grid-content">
-                      <h4><img src="http://placehold.it/30x30"> Cady Heron</h4>
-                      <p>Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie
-                        magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris
-                        iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam
-                        at risus et justo dignissim congue.</p>
-                      <hr />
-                      <h4><img src="http://placehold.it/30x30"> Kevin Gnapoor</h4>
-                      <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh
-                        porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.
-                        Suspendisse dictum feugiat.</p>
-                      <hr />
-                      <h4><img src="http://placehold.it/30x30"> Cady Heron</h4>
-                      <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh
-                        porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.
-                        Suspendisse dictum feugiat.</p>
-                      <hr />
-                      <h4><img src="http://placehold.it/30x30"> Trang Pak</h4>
-                      <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh
-                        porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.
-                        Suspendisse dictum feugiat.</p>
-                      <hr />
-                      <h4><img src="http://placehold.it/30x30"> Coach Carr</h4>
-                      <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh
-                        porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.
-                        Suspendisse dictum feugiat.</p>
-                      <hr />
-                      <h4><img src="http://placehold.it/30x30"> Cady Heron</h4>
-                      <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh
-                        porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.
-                        Suspendisse dictum feugiat.</p>
-                      <hr />
-                      <h4><img src="http://placehold.it/30x30"> Trang Pak</h4>
-                      <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh
-                        porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.
-                        Suspendisse dictum feugiat.</p>
-                      <hr />
-                      <h4><img src="http://placehold.it/30x30"> Cady Heron</h4>
-                      <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh
-                        porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.
-                        Suspendisse dictum feugiat.</p>
-                      <hr />
-                    </div>
-                    <div class="message-input grid-content collapse shrink">
-                      <span class="inline-label">
+        <div class="grid-block collapse medium-9 large-9 vertical">
+          <div id="header" class="shrink collapse grid-content">
+            <ul class="menu-bar primary">
+              <li class="hide-for-medium"><a zf-open="sidebar" href="#">Menu</a></li>
+              <li><a href="#">Link 1</a></li>
+              <li><a href="#">Link 2</a></li>
+              <li><a href="#">Link 3</a></li>
+            </ul>
+          </div>
+          <div class="grid-block">
+            <div class="grid-block small-12 medium-9 vertical">
+              <div class="grid-content">
+                <h4><img src="http://placehold.it/30x30"> Cady Heron</h4>
+                <p>Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna
+                  non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis
+                  porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et
+                  justo dignissim congue.</p>
+                <hr />
+                <h4><img src="http://placehold.it/30x30"> Kevin Gnapoor</h4>
+                <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.
+                  Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum
+                  feugiat.</p>
+                <hr />
+                <h4><img src="http://placehold.it/30x30"> Cady Heron</h4>
+                <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.
+                  Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum
+                  feugiat.</p>
+                <hr />
+                <h4><img src="http://placehold.it/30x30"> Trang Pak</h4>
+                <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.
+                  Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum
+                  feugiat.</p>
+                <hr />
+                <h4><img src="http://placehold.it/30x30"> Coach Carr</h4>
+                <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.
+                  Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum
+                  feugiat.</p>
+                <hr />
+                <h4><img src="http://placehold.it/30x30"> Cady Heron</h4>
+                <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.
+                  Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum
+                  feugiat.</p>
+                <hr />
+                <h4><img src="http://placehold.it/30x30"> Trang Pak</h4>
+                <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.
+                  Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum
+                  feugiat.</p>
+                <hr />
+                <h4><img src="http://placehold.it/30x30"> Cady Heron</h4>
+                <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.
+                  Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum
+                  feugiat.</p>
+                <hr />
+              </div>
+              <div class="message-input grid-content collapse shrink">
+                <span class="inline-label">
                 <input type="text" placeholder="Message">
                 <a href="#" class="button">Send</a>
               </span>
-                    </div>
-                  </div>
-                  <div class="grid-content medium-3 show-for-medium message-side-bar">
-                    <section class="block-list">
-                      <header>In This Room</header>
-                      <ul>
-                        <li><a href="#">Cady Heron</a></li>
-                        <li><a href="#">Kevin Gnapoor</a></li>
-                        <li><a href="#">Trang Pak</a></li>
-                        <li><a href="#">Coach Carr</a></li>
-                        <li><a href="#">Regina George</a></li>
-                      </ul>
-                    </section>
-                  </div>
-                </div>
               </div>
             </div>
-            <!-- /.discussionPlaceholder -->
+            <div class="grid-content medium-3 show-for-medium message-side-bar">
+              <section class="block-list">
+                <header>In This Room</header>
+                <ul>
+                  <li><a href="#">Cady Heron</a></li>
+                  <li><a href="#">Kevin Gnapoor</a></li>
+                  <li><a href="#">Trang Pak</a></li>
+                  <li><a href="#">Coach Carr</a></li>
+                  <li><a href="#">Regina George</a></li>
+                </ul>
+              </section>
+            </div>
           </div>
-          <!-- /.tabs-panel3 -->
         </div>
-        <!-- /.tabs-content -->
       </div>
-      <!-- /.column row -->
+      <!-- /.discussionPlaceholder -->
+    </div>
+    <!-- /.tabs-panel3 -->
+  </div>
+  <!-- /.tabs-content -->
+</div>
+<!-- /.column row -->
 
-      <!-- Footer -->
-      <div class="cell shrink footer">
-        &copy; MONARCHY Coding 2017
-        <br>
-        <a class="orange" href="https://github.com/mderoberts/book-buddies" target="_blank">Github</a> </p>
-      </div>
-      <!-- Footer -->
+<!-- Footer -->
+<div class="cell shrink footer">
+  &copy; MONARCHY Coding 2017
+  <br>
+  <a class="orange" href="https://github.com/mderoberts/book-buddies" target="_blank">Github</a> </p>
+</div>
+<!-- Footer -->

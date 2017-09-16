@@ -1,142 +1,121 @@
- <div class="title-bar" data-responsive-toggle="book-menu" data-hide-for="medium">
-    <button class="menu-icon" type="button" data-toggle="book-menu"></button>
-    <div class="orange title-bar-title">Book Buddies</div>
+<!-- Navigation Mobile Responsive-->
+<div class="title-bar" data-responsive-toggle="book-menu" data-hide-for="medium">
+  <button class="menu-icon" type="button" data-toggle="book-menu"></button>
+  <div class="orange title-bar-title">Book Buddies</div>
+</div>
+<div class="top-bar" id="book-menu">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="orange menu-text">Book Buddies</li>
+      <li><a class="orange" href="/">Home</a></li>
+      <li><a class="orange" href="/#about">About</a></li>
+      <li><a class="orange" href="/bookclubs">Book Clubs</a></li>
+    </ul>
   </div>
-  <div class="top-bar" id="book-menu">
-    <div class="top-bar-left">
-      <ul class="dropdown menu" data-dropdown-menu>
-        <li class="orange menu-text">Book Buddies</li>
-        <li><a class="orange" href="index.html">Home</a></li>
-        <li><a class="orange" href="index.html#about">About</a></li>
-        <li><a class="orange" href="bookclubs.html" target="_blank">Book Clubs</a></li>
-      </ul>
-    </div>
-
-    <div class="top-bar-right">
-      <ul class="menu">
-        <li><a class=href="#">My Account</a></li>
-        <li><a class="orange-bg button" data-open="profileModal">Login</a></li>
-        <div class="reveal" id="profileModal" data-reveal>
-          <div class="login-box">
-            <div class="row collapse expanded">
-              <div class="small-12 medium-6 column small-order-2 medium-order-1">
-                <div class="login-box-form-section">
-                  <h1 class="login-box-title">Welcome Back, <a class="orange"> Buddy!</a></h1>
-                  <input class="login-box-input" type="text" name="username" placeholder="Username" />
-                  <input class="login-box-input" type="password" name="password" placeholder="Password" />
-                  <input class=" orange login-box-submit-button" type="submit" name="signup_submit" value="Log In" />
-                </div>
-                <div class="small-12 medium-6 column small-order-1 medium-order-2 login-box-social-section">
-                  <div class="login-box-social-section-inner">
-                    <span class="login-box-social-headline">Sign in with<br />your social network</span>
-                    <a class="login-box-social-button-facebook">Log in with Facebook</a>
-                    <a class="login-box-social-button-twitter">Log in with Twitter</a>
-                    <a class="login-box-social-button-google">Log in with Google+</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-      </ul>
-      </div>
-      </div>
-      <!-- /Navigation -->
+  <div class="top-bar-right">
+    <ul class="menu">
+      <li><a class="orange" href="/user">My Account</a></li>
+    </ul>
+  </div>
+</div>
+<!-- /Navigation -->
 
 
 
 <div class="grid-x grid-margin-x">
- <div class="small-1 cell"></div>   
+  <div class="small-1 cell"></div>
   <div class="small-4 cell">
-      <br>
-          <div class="card-profile">
-                {{!-- {{#each User}} --}}
-            <div class="card-profile-stats-intro">
-              <img class="card-profile-stats-intro-pic" src="{{this.photo}}" alt="profile-image">
-              <div class="card-profile-stats-intro-content">
-            
-                <h3>{{this.firstName}} {{this.lastName}}</h3>
-                <p> {{this.location}} </p>
-                {{!-- {{/each}} --}}
-              </div>
-              <!-- /.card-profile-stats-intro-content -->
-            </div>
-            <!-- /.card-profile-stats-intro -->
+    <br>
+    <div class="card-profile">
+      {{!-- {{#each User}} --}}
+      <div class="card-profile-stats-intro">
+        <img class="card-profile-stats-intro-pic" src="{{this.photo}}" alt="profile-image">
+        <div class="card-profile-stats-intro-content">
 
-            <hr>
+          <h3>{{this.firstName}} {{this.lastName}}</h3>
+          <p> {{this.location}} </p>
+          {{!-- {{/each}} --}}
+        </div>
+        <!-- /.card-profile-stats-intro-content -->
+      </div>
+      <!-- /.card-profile-stats-intro -->
 
-            <div class="card-profile-stats-container">
-              <div class="card-profile-stats-statistic">
-                {{!-- {{#each User}} --}}
-<!-- Not sure what to place for club associations data field-->
-               <span class="stat">{{this.favoriteBook}}</span>
-                <p class="orange">Favorite Book</p>
-                {{!-- {{/each}} --}}
-              </div>
-              <!-- /.card-profile-stats-statistic -->
-             <!-- <div class="card-profile-stats-statistic">
+      <hr>
+
+      <div class="card-profile-stats-container">
+        <div class="card-profile-stats-statistic">
+          {{!-- {{#each User}} --}}
+          <!-- Not sure what to place for club associations data field-->
+          <span class="stat">{{this.favoriteBook}}</span>
+          <p class="orange">Favorite Book</p>
+          {{!-- {{/each}} --}}
+        </div>
+        <!-- /.card-profile-stats-statistic -->
+        <!-- <div class="card-profile-stats-statistic">
                 <span class="stat">125</span>
                 <p class="orange">Buddies</p>
               </div> -->
-              <!-- /.card-profile-stats-statistic -->
-            </div>
-            <!-- /.card-profile-stats-container -->
+        <!-- /.card-profile-stats-statistic -->
+      </div>
+      <!-- /.card-profile-stats-container -->
 
-            <div class="card-profile-stats-more">
-              <p class="card-profile-stats-more-link"><a href="#"><i class="fa fa-angle-down" aria-hidden="true"></i></a></p>
-              <div class="card-profile-stats-more-content">
-                <p> {{this.bio}}</p>
-              </div>
-              <!-- /.card-profile-stats-more-content -->
-            </div>
-            <!-- /.card-profile-stats-more -->
-          </div>
-          <!-- /.card-profile-stats -->
+      <div class="card-profile-stats-more">
+        <p class="card-profile-stats-more-link"><a href="#"><i class="fa fa-angle-down" aria-hidden="true"></i></a></p>
+        <div class="card-profile-stats-more-content">
+          <p> {{this.bio}}</p>
+        </div>
+        <!-- /.card-profile-stats-more-content -->
+      </div>
+      <!-- /.card-profile-stats-more -->
     </div>
-    <div class="auto cell">
+    <!-- /.card-profile-stats -->
+  </div>
+  <div class="auto cell">
     <br>
-      
-      <ul class="tabs" data-tabs id="example-tabs">
-        <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Book Clubs</a></li>
-        <li class="tabs-title"><a href="#panel2">Chat (Coming Soon)</a></li>
-      </ul>
-      <div class="tabs-content" data-tabs-content="example-tabs">
-        <div class="tabs-panel is-active" id="panel1">
-          <h4>Clubs</h4>
-          <div class="media-object stack-for-small">
-            <div class="media-object-section">
-              <img class="thumbnail" src="http://placehold.it/200x200">
-            </div>
-            <div class="media-object-section">
-              {{#each Club}}
-              <h5>{{this.clubName}}</h5>
-              <p>{{this.location}}</p>
-              <p>{{this.genre}}</p>
-              <p>{{this.description}}</p>
-              {{/each}}
-            </div>
+
+    <ul class="tabs" data-tabs id="example-tabs">
+      <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Book Clubs</a></li>
+      <li class="tabs-title"><a href="#panel2">Chat (Coming Soon)</a></li>
+    </ul>
+    <div class="tabs-content" data-tabs-content="example-tabs">
+      <div class="tabs-panel is-active" id="panel1">
+        <h4>Clubs</h4>
+        <div class="media-object stack-for-small">
+          <div class="media-object-section">
+            <img class="thumbnail" src="http://placehold.it/200x200">
+          </div>
+          <div class="media-object-section">
+            {{#each Club}}
+            <h5>{{this.clubName}}</h5>
+            <p>{{this.location}}</p>
+            <p>{{this.genre}}</p>
+            <p>{{this.description}}</p>
+            {{/each}}
           </div>
         </div>
-        <div class="tabs-panel" id="panel2">
-          <div class="row medium-up-3 large-up-5">
+      </div>
+      <div class="tabs-panel" id="panel2">
+        <div class="row medium-up-3 large-up-5">
           <label>
             Message
             <textarea placeholder="Heeeeeyyyyy Buddy!"></textarea>
           </label>
           <button class="button">Send</button>
 
-          </div>
         </div>
-      </div> 
+      </div>
     </div>
+  </div>
 </div>
 </div>
 </div>
 
 
-      <!-- Footer -->
-      <div class="footer">
-          <div class="info">
-        <div class="row">
-        <div class="large-12 columns">
+<!-- Footer -->
+<div class="footer">
+  <div class="info">
+    <div class="row">
+      <div class="large-12 columns">
         &copy; MONARCHY Coding 2017
         <br>
         <a class="orange" href="https://github.com/mderoberts/book-buddies" target="_blank">Github</a> </p>
