@@ -35,6 +35,7 @@ module.exports = function (passport, user) {
               password: userPassword,
               location: req.body.location,
               bio: req.body.bio,
+              favoriteBook: req.body.favoriteBook,
               photo: req.body.photo
             };
           User.create(data).then(function (newUser, created) {
