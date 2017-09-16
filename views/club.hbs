@@ -62,7 +62,7 @@
   <ul class="vertical medium-horizontal menu expanded text-center">
     <li>
       <a href="#buddies">
-        <div class="stat">28</div><span class="orange">Buddies</span></a>
+        <div class="stat">{{members.length}}</div><span class="orange">Buddies</span></a>
     </li>
     <li>
       <a href="#events">
@@ -92,45 +92,27 @@
     <div class="tabs-panel is-active" id="panel1">
       <h4 class="orange">Buddies</h4>
 
-
-      <!-- First Profile Card -->
       <div class="row small-up-2 medium-up-3">
+        {{#each members}}
         <div class="column">
           <div class="card-profile-stats">
             <div class="card-profile-stats-intro">
-              <img class="card-profile-stats-intro-pic" src="https://pbs.twimg.com/profile_images/732634911761260544/OxHbNdTF.jpg" alt="profile-image"
-              />
+              <img class="card-profile-stats-intro-pic" src="{{this.photo}}" alt="profile-image">
               <div class="card-profile-stats-intro-content">
-                <h3>Joe Smith</h3>
-                <p> Chapel Hill, NC </p>
+                <h3>{{this.firstName}} {{this.lastName}}</h3>
+                <p>{{this.location}}</p>
               </div>
               <!-- /.card-profile-stats-intro-content -->
             </div>
             <!-- /.card-profile-stats-intro -->
 
-            <hr>
-
-            <div class="card-profile-stats-container">
-              <div class="card-profile-stats-statistic">
-                <span class="stat">5</span>
-                <p class="orange">Clubs</p>
-              </div>
-              <!-- /.card-profile-stats-statistic -->
-              <div class="card-profile-stats-statistic">
-                <span class="stat">125</span>
-                <p class="orange">Buddies</p>
-              </div>
-              <!-- /.card-profile-stats-statistic -->
-            </div>
-            <!-- /.card-profile-stats-container -->
-
             <div class="card-profile-stats-more">
               <p class="card-profile-stats-more-link"><a href="#"><i class="fa fa-angle-down" aria-hidden="true"></i></a></p>
               <div class="card-profile-stats-more-content">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem libero fugit, pariatur maxime! Optio enim, deserunt
-                  quia molestiae fugiat delectus, dolore et esse nostrum, quod autem necessitatibus fugit soluta repellendus.
+                  {{this.bio}}
                 </p>
+                <p>Favorite book: {{this.favoriteBook}}</p>
               </div>
               <!-- /.card-profile-stats-more-content -->
             </div>
@@ -139,96 +121,8 @@
           <!-- /.card-profile-stats -->
         </div>
         <!-- /.column -->
-        <!-- First Profile Card -->
+        {{/each}}
 
-        <!-- Second Profile Card -->
-        <div class="column">
-          <div class="card-profile-stats">
-            <div class="card-profile-stats-intro">
-              <img class="card-profile-stats-intro-pic" src="assets/img/bio2.jpg" alt="profile-image" />
-              <div class="card-profile-stats-intro-content">
-                <h3>Joe Smith</h3>
-                <p> Chapel Hill, NC </p>
-              </div>
-              <!-- /.card-profile-stats-intro-content -->
-            </div>
-            <!-- /.card-profile-stats-intro -->
-
-            <hr>
-
-            <div class="card-profile-stats-container">
-              <div class="card-profile-stats-statistic">
-                <span class="stat">5</span>
-                <p class="orange">Clubs</p>
-              </div>
-              <!-- /.card-profile-stats-statistic -->
-              <div class="card-profile-stats-statistic">
-                <span class="stat">125</span>
-                <p class="orange">Buddies</p>
-              </div>
-              <!-- /.card-profile-stats-statistic -->
-            </div>
-            <!-- /.card-profile-stats-container -->
-
-            <div class="card-profile-stats-more">
-              <p class="card-profile-stats-more-link"><a href="#"><i class="fa fa-angle-down" aria-hidden="true"></i></a></p>
-              <div class="card-profile-stats-more-content">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem libero fugit, pariatur maxime! Optio enim, deserunt
-                  quia molestiae fugiat delectus, dolore et esse nostrum, quod autem necessitatibus fugit soluta repellendus.
-                </p>
-              </div>
-              <!-- /.card-profile-stats-more-content -->
-            </div>
-            <!-- /.card-profile-stats-more -->
-          </div>
-          <!-- /.card-profile-stats -->
-        </div>
-        <!-- /.column -->
-        <!-- Third Profile Card -->
-        <div class="column">
-          <div class="card-profile-stats">
-            <div class="card-profile-stats-intro">
-              <img class="card-profile-stats-intro-pic" src="assets/img/bio3.png" alt="profile-image" />
-              <div class="card-profile-stats-intro-content">
-                <h3>Joe Smith</h3>
-                <p> Chapel Hill, NC </p>
-              </div>
-              <!-- /.card-profile-stats-intro-content -->
-            </div>
-            <!-- /.card-profile-stats-intro -->
-
-            <hr>
-
-            <div class="card-profile-stats-container">
-              <div class="card-profile-stats-statistic">
-                <span class="stat">5</span>
-                <p class="orange">Clubs</p>
-              </div>
-              <!-- /.card-profile-stats-statistic -->
-              <div class="card-profile-stats-statistic">
-                <span class="stat">125</span>
-                <p class="orange">Buddies</p>
-              </div>
-              <!-- /.card-profile-stats-statistic -->
-            </div>
-            <!-- /.card-profile-stats-container -->
-
-            <div class="card-profile-stats-more">
-              <p class="card-profile-stats-more-link"><a href="#"><i class="fa fa-angle-down" aria-hidden="true"></i></a></p>
-              <div class="card-profile-stats-more-content">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem libero fugit, pariatur maxime! Optio enim, deserunt
-                  quia molestiae fugiat delectus, dolore et esse nostrum, quod autem necessitatibus fugit soluta repellendus.
-                </p>
-              </div>
-              <!-- /.card-profile-stats-more-content -->
-            </div>
-            <!-- /.card-profile-stats-more -->
-          </div>
-          <!-- /.card-profile-stats -->
-        </div>
-        <!-- /.column -->
       </div>
       <!--/. row small-up-2 medium-up-3-->
       <!-- Third Profile Card -->
@@ -330,37 +224,44 @@
                 <h4><img src="http://placehold.it/30x30"> Kevin Gnapoor</h4>
                 <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.
                   Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum
-                  feugiat.</p>
+                  feugiat.
+                </p>
                 <hr />
                 <h4><img src="http://placehold.it/30x30"> Cady Heron</h4>
                 <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.
                   Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum
-                  feugiat.</p>
+                  feugiat.
+                </p>
                 <hr />
                 <h4><img src="http://placehold.it/30x30"> Trang Pak</h4>
                 <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.
                   Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum
-                  feugiat.</p>
+                  feugiat.
+                </p>
                 <hr />
                 <h4><img src="http://placehold.it/30x30"> Coach Carr</h4>
                 <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.
                   Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum
-                  feugiat.</p>
+                  feugiat.
+                </p>
                 <hr />
                 <h4><img src="http://placehold.it/30x30"> Cady Heron</h4>
                 <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.
                   Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum
-                  feugiat.</p>
+                  feugiat.
+                </p>
                 <hr />
                 <h4><img src="http://placehold.it/30x30"> Trang Pak</h4>
                 <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.
                   Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum
-                  feugiat.</p>
+                  feugiat.
+                </p>
                 <hr />
                 <h4><img src="http://placehold.it/30x30"> Cady Heron</h4>
                 <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.
                   Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum
-                  feugiat.</p>
+                  feugiat.
+                </p>
                 <hr />
               </div>
               <div class="message-input grid-content collapse shrink">
