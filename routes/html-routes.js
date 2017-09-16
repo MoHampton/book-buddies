@@ -3,9 +3,9 @@ var db = require('../models');
 module.exports = function(app) {
   // on get '/' render contents of index.html, aka splash screen
   app.get('/', function(req, res) {
-    console.log("req.user:", req.user);
+    var hbObject = {userData: req.user};
     // insert a isLoggedIn check--maybe move this whole route into auth-routes--and if logged in redirect
-    res.render("index");
+    res.render("index", hbObject);
   });
   
   // on get '/club:id' render contents of club.html, customized w data from individual club, as determined by req.params.id

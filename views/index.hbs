@@ -14,7 +14,9 @@
     </div>
     <div class="top-bar-right">
         <ul class="menu">
-            <li><a class=href="#">My Account</a></li>
+            {{#if userData}}
+            <li><a class="orange" href="/user">My Account</a></li>
+            {{else}}
             <li><a class="orange-bg button" data-open="profileModal">Login</a></li>
             <div class="reveal" id="profileModal" data-reveal>
                 <div class="login-box">
@@ -32,6 +34,7 @@
                     </div>
                 </div>
             </div>
+            {{/if}}
         </ul>
     </div>
 </div>
