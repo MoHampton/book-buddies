@@ -70,7 +70,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Colors */
 
 .orange {
-    color: #F78536;
+    color: #F78536 !important;
 }
 
 .light-blue-grey {

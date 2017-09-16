@@ -7,9 +7,13 @@
   <div class="top-bar-left">
     <ul class="dropdown menu" data-dropdown-menu>
       <li class="orange menu-text">Book Buddies</li>
-      <li><a class="orange" href="/index">Home</a></li>
-      <li><a class="orange" href="/index#about">About</a></li>
+      <li><a class="orange" href="/">Home</a></li>
+      <li><a class="orange" href="/#about">About</a></li>
+      {{#if userData}}
+      <li><a class="orange" href="/ubookclubs">Book Clubs</a></li>
+      {{else}}
       <li><a class="orange" href="/bookclubs">Book Clubs</a></li>
+      {{/if}}
     </ul>
   </div>
   <div class="top-bar-right">
@@ -17,6 +21,7 @@
 
       {{#if userData}}
       <li><a class="orange" href="/user">My Account</a></li>
+      <li><a class="orange-bg button" href="/logout">Logout</a></li>
       {{else}}
       <li><a class="orange-bg button" data-open="profileModal">Login</a></li>
       <div class="reveal" id="profileModal" data-reveal>
