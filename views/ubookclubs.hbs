@@ -102,22 +102,25 @@
             <h3>Can't Find Your Perfect Club?</h3>
             <h4>Become the ultimate <span class="orange"> Book Buddy </span> and create a new Book Club!</h4>
             <label>Club Name: 
-                <input type="text" id="clubName" placeholder="Name">
+                <input type="text" name="clubName" placeholder="Name" required>
               </label>
             <label>Book Genres:
-                <input type="text" id="genre" placeholder="Romance?">
+                <input type="text" name="genre" placeholder="Romance?" required>
               </label>
+            <label>Moderator:
+                <input type="text" name="moderator" placeholder="Moderator" required>
+              </label>              
             <label>Meeting Location:
-                <input type="text" id="location" placeholder="Chapel Hill, NC">
+                <input type="text" name="location" placeholder="Chapel Hill NC" required>
               </label>
             <label> Description:
-                <textarea id="description" placeholder="Make it good...this is your selling point"></textarea>
+                <textarea name="description" placeholder="Make it good...this is your selling point" required></textarea>
               </label>
             <label>First Book:
-                <input type="text" id="nextBook" placeholder="What would you like to read first?">
+                <input type="text" name="currentBook" placeholder="What would you like to read first?" required>
               </label>
             <label>Book Club Backgroud Image:
-                <input type="text" id="location" placeholder="Please submit an image URL. Image uploading is coming soon!">
+                <input type="url" name="photo" placeholder="Please submit an image URL. Image uploading is coming soon!">
               </label>
             <input type="submit" class="orange-bg button expanded" value="Submit">
           </form>

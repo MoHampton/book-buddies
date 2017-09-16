@@ -21,4 +21,22 @@ module.exports = function(app) {
   app.post("/join/:ClubId", function(req, res) {
     res.send("You must log in first");
   });
+
+  app.post('/', function(req, res) {
+    console.log('req.body:', req.body);
+    db.Club.create({
+      clubName: req.body.clubName,
+      genre: req.body.genre,
+      description: req.body.description,
+      location: req.body.location,
+      moderator: req.body.moderator, // or user data passed in?
+      currentBook: req.body.currentBook,
+      nextBook: req.body.nextBook,
+      photo: req.body.photo
+    }).then(function(dbResponse) {
+      // sequelize find for the new club
+      console.log("dbResponse:", dbResponse);
+      res.redirect('/club' + dbResponse.dataValues.id);
+    })
+  })
 }
