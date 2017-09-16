@@ -14,12 +14,14 @@
     </div>
     <div class="top-bar-right">
         <ul class="menu">
-            <li><a class=href="#">My Account</a></li>
+            {{#if userData}}
+            <li><a class="orange" href="/user">My Account</a></li>
+            {{else}}
             <li><a class="orange-bg button" data-open="profileModal">Login</a></li>
             <div class="reveal" id="profileModal" data-reveal>
                 <div class="login-box">
                     <div class="row collapse expanded">
-                        <div class="small-12 medium-6 column small-order-2 medium-order-1">
+                        <div class="small-12 column small-order-2 medium-order-1">
                             <div class="login-box-form-section">
                                 <form method="POST" action="/signin" id="signin-form">
                                     <h1 class="login-box-title">Welcome Back, <a class="orange"> Buddy!</a></h1>
@@ -32,6 +34,7 @@
                     </div>
                 </div>
             </div>
+            {{/if}}
         </ul>
     </div>
 </div>
@@ -56,7 +59,7 @@
                         <div class="reveal" id="LoginModal" data-reveal>
                             <div class="login-box">
                                 <div class="row collapse expanded">
-                                    <div class="small-12 medium-6 column small-order-1 medium-order-2">
+                                    <div class="small-12 column small-order-1 medium-order-2">
                                         <div class="login-box-form-section">
                                             <form method="POST" action="/signup" id="signup-form">
                                                 <h1 class="login-box-title">Sign up</h1>
