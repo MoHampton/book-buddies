@@ -18,10 +18,25 @@ module.exports = function (app, passport) {
 
   app.get('/user', isLoggedIn, function (req, res) {
     // (no clubs joined? show "Select a club" text and list of all clubs.
-    // Use has joined clubs? show user's clubs w "Your clubs" text, and recommended clubs.)
-    console.log(req.user);
-    var userData = req.user
-    res.render("user", userData);
+    // User has joined clubs? show user's clubs w "Your clubs" text, and recommended clubs.)
+    var hbObject = {};
+    hbObject.userData = req.user;
+    var clubIDs = [];
+    // find all entries in the Associations table for this user
+    db.Association.findAll({
+      where: {UserId: req.user.id}
+    }).then(function(dbAssociations) {
+      dbAssociations.forEach(function(element) {
+        clubIDs.push(element.dataValues.ClubId);
+      });
+    }).then(function(){
+      db.Club.findAll({
+        where: {id: clubIDs}
+      }).then(function(dbClubs) {
+        hbObject.clubs = dbClubs;
+        res.render("user", hbObject);
+      });
+    });
   });
 
   app.get('/ubookclubs', isLoggedIn, function (req, res) {

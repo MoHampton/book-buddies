@@ -49,13 +49,11 @@ module.exports = function(app) {
         // limit findAll search to the stored array of IDs
         where: {id: members}
       }).then(function(dbUsers) {
-          console.log('dbUsers:', dbUsers)
+          // console.log('dbUsers:', dbUsers)
           hbObject.members = dbUsers;
-          console.log("hbObject:", hbObject);
+          // console.log("hbObject:", hbObject);
           res.render("club", hbObject);
         });
     });
-    // console.log(req);
   });
-  
-}
+};

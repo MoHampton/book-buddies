@@ -29,11 +29,11 @@
     <div class="card-profile">
       {{!-- {{#each User}} --}}
       <div class="card-profile-stats-intro">
-        <img class="card-profile-stats-intro-pic" src="{{this.photo}}" alt="profile-image">
+        <img class="card-profile-stats-intro-pic" src="{{userData.photo}}" alt="profile-image">
         <div class="card-profile-stats-intro-content">
 
-          <h3>{{this.firstName}} {{this.lastName}}</h3>
-          <p> {{this.location}} </p>
+          <h3>{{userData.firstName}} {{userData.lastName}}</h3>
+          <p> {{userData.location}} </p>
           {{!-- {{/each}} --}}
         </div>
         <!-- /.card-profile-stats-intro-content -->
@@ -46,7 +46,7 @@
         <div class="card-profile-stats-statistic">
           {{!-- {{#each User}} --}}
           <!-- Not sure what to place for club associations data field-->
-          <span class="stat">{{this.favoriteBook}}</span>
+          <span class="stat">{{userData.favoriteBook}}</span>
           <p class="orange">Favorite Book</p>
           {{!-- {{/each}} --}}
         </div>
@@ -62,7 +62,7 @@
       <div class="card-profile-stats-more">
         <p class="card-profile-stats-more-link"><a href="#"><i class="fa fa-angle-down" aria-hidden="true"></i></a></p>
         <div class="card-profile-stats-more-content">
-          <p> {{this.bio}}</p>
+          <p> {{userData.bio}}</p>
         </div>
         <!-- /.card-profile-stats-more-content -->
       </div>
@@ -80,16 +80,15 @@
     <div class="tabs-content" data-tabs-content="example-tabs">
       <div class="tabs-panel is-active" id="panel1">
         <h4>Clubs</h4>
+        <hr>
         <div class="media-object stack-for-small">
           <div class="media-object-section">
-            <img class="thumbnail" src="http://placehold.it/200x200">
-          </div>
-          <div class="media-object-section">
-            {{#each Club}}
+            {{#each clubs}}
             <h5>{{this.clubName}}</h5>
             <p>{{this.location}}</p>
             <p>{{this.genre}}</p>
             <p>{{this.description}}</p>
+            <hr>
             {{/each}}
           </div>
         </div>
