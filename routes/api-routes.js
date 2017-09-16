@@ -24,7 +24,9 @@ module.exports = function(app) {
     db.Association.findOrCreate({
       // creates association if it doesn't already exist
       where: req.params
-    });
+    }).then(function(){
+      res.redirect('/club' + req.params.ClubId);
+    })
   });
 
   app.post("/join/:ClubId", function(req, res) {
